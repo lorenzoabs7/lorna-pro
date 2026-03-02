@@ -3,7 +3,6 @@ import node from '@astrojs/node';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://lornadev.com',
@@ -14,8 +13,7 @@ export default defineConfig({
       applyBaseStyles: false
     }),
     react(),
-    mdx(),
-    sitemap()
+    mdx()
   ],
   vite: {
     optimizeDeps: {

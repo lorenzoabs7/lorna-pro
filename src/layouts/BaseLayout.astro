@@ -53,7 +53,7 @@ const { locale } = getI18n(Astro);
 
     <!-- Structured Data -->
     {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
 
     <title>{title}</title>

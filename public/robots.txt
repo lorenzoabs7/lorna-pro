@@ -16,4 +16,4 @@ Disallow: /admin/
 Disallow: /*?draft=true*
 
 # Sitemap
-Sitemap: https://lornadev.com/sitemap-0.xml
+Sitemap: https://lornadev.com/sitemap.xml

@@ -4,6 +4,8 @@ import { getCollection } from 'astro:content';
 import { getI18n } from '../../i18n/server';
 import type { TranslationKey } from '../../i18n/translator';
 
+export const prerender = false;
+
 export async function getStaticPaths() {
   const work = await getCollection('work');
   return work.map((item) => ({
