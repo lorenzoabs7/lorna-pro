@@ -7,26 +7,40 @@ import type { TranslationKey } from '../../i18n/translator';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
-const dbPath = path.join(process.cwd(), 'contact_submissions.db');
-const db = new Database(dbPath);
-
 const t = createTranslator('en');
 
-db.exec(`
-  CREATE TABLE IF NOT EXISTS submissions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    email TEXT NOT NULL,
-    company TEXT,
-    project_type TEXT,
-    budget TEXT,
-    message TEXT NOT NULL,
-    honeypot TEXT,
-    ip_address TEXT,
-    user_agent TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
-`);
+// On Vercel, filesystem is read-only except /tmp; use it for SQLite (ephemeral per instance).
+const dbPath =
+  typeof process.env.VERCEL !== 'undefined'
+    ? path.join('/tmp', 'contact_submissions.db')
+    : path.join(process.cwd(), 'contact_submissions.db');
+
+let db: Database.Database | null = null;
+
+function getDb(): Database.Database | null {
+  if (db) return db;
+  try {
+    db = new Database(dbPath);
+    db.exec(`
+      CREATE TABLE IF NOT EXISTS submissions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        company TEXT,
+        project_type TEXT,
+        budget TEXT,
+        message TEXT NOT NULL,
+        honeypot TEXT,
+        ip_address TEXT,
+        user_agent TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    return db;
+  } catch {
+    return null;
+  }
+}
 
 interface ContactFormData {
   name: string;
@@ -81,22 +95,26 @@ export const POST: APIRoute = async ({ request }) => {
       console.log('Honeypot triggered - potential spam submission');
     }
 
-    const insertStmt = db.prepare(`
-      INSERT INTO submissions (name, email, company, project_type, budget, message, honeypot, ip_address, user_agent)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
-    const result = insertStmt.run(
-      formData.name.trim(),
-      formData.email.trim(),
-      formData.company?.trim() || null,
-      formData.projectType || null,
-      formData.budget || null,
-      formData.message.trim(),
-      formData.honeypot || null,
-      clientIP,
-      userAgent
-    );
+    let lastInsertRowid: number | null = null;
+    const database = getDb();
+    if (database) {
+      const insertStmt = database.prepare(`
+        INSERT INTO submissions (name, email, company, project_type, budget, message, honeypot, ip_address, user_agent)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `);
+      const result = insertStmt.run(
+        formData.name.trim(),
+        formData.email.trim(),
+        formData.company?.trim() || null,
+        formData.projectType || null,
+        formData.budget || null,
+        formData.message.trim(),
+        formData.honeypot || null,
+        clientIP,
+        userAgent
+      );
+      lastInsertRowid = result.lastInsertRowid as number;
+    }
 
     if (process.env.RESEND_API_KEY) {
       try {
@@ -147,7 +165,7 @@ export const POST: APIRoute = async ({ request }) => {
                 </div>
 
                 <div style="background: #e9ecef; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 14px;">
-                  <p><strong>${t.t('api.contact.email.submissionId')}</strong> ${result.lastInsertRowid}</p>
+                  ${lastInsertRowid != null ? `<p><strong>${t.t('api.contact.email.submissionId')}</strong> ${lastInsertRowid}</p>` : ''}
                   <p><strong>${t.t('api.contact.email.submitted')}</strong> ${new Date().toLocaleString()}</p>
                   <p><strong>${t.t('api.contact.email.ipAddress')}</strong> ${clientIP}</p>
                 </div>
@@ -178,7 +196,7 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({
         success: true,
         message: t.t('api.contact.success.messageSent'),
-        id: result.lastInsertRowid
+        id: lastInsertRowid
       }),
       {
         status: 200,
@@ -197,8 +215,16 @@ export const GET: APIRoute = async ({ request }) => {
     return errorResponse('api.contact.errors.unauthorized', 401);
   }
 
+  const database = getDb();
+  if (!database) {
+    return new Response(JSON.stringify({ submissions: [] }), {
+      status: 200,
+      headers: jsonHeaders
+    });
+  }
+
   try {
-    const submissions = db
+    const submissions = database
       .prepare(`
       SELECT id, name, email, company, project_type, budget, message, created_at
       FROM submissions
