@@ -1,6 +1,6 @@
 import { d as createAstro, e as createComponent, r as renderComponent, f as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_9P8XkXq2.mjs';
 import { g as getI18n, $ as $$BaseLayout } from '../../chunks/BaseLayout_DR78Hthj.mjs';
-import { g as getCollection } from '../../chunks/_astro_content_B1O02SQD.mjs';
+import { g as getCollection } from '../../chunks/_astro_content_ifs14ige.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro("https://lornadev.com");
