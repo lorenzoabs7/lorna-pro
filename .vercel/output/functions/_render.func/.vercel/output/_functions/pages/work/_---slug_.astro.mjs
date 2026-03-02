@@ -1,0 +1,57 @@
+import { d as createAstro, e as createComponent, r as renderComponent, f as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_9P8XkXq2.mjs';
+import { g as getI18n, $ as $$BaseLayout } from '../../chunks/BaseLayout_DR78Hthj.mjs';
+import { g as getCollection } from '../../chunks/_astro_content_B1O02SQD.mjs';
+export { renderers } from '../../renderers.mjs';
+
+const $$Astro = createAstro("https://lornadev.com");
+const prerender = false;
+async function getStaticPaths() {
+  const work = await getCollection("work");
+  return work.map((item) => ({
+    params: { slug: item.slug },
+    props: { work: item }
+  }));
+}
+const $$ = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$;
+  const { work } = Astro2.props;
+  const { t } = getI18n(Astro2);
+  const translateMaybeKey = (value) => {
+    if (!value) return "";
+    if (!value.includes(".")) return value;
+    return t(value);
+  };
+  const title = translateMaybeKey(work.data.title);
+  const problem = translateMaybeKey(work.data.problem);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    description: problem,
+    about: work.data.results.map((result) => translateMaybeKey(result)),
+    creator: {
+      "@type": "Organization",
+      name: t("common.brandName")
+    },
+    datePublished: work.data.publishedAt || (/* @__PURE__ */ new Date()).toISOString(),
+    keywords: work.data.stack.join(", ")
+  };
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": `${title} | ${t("common.labels.caseStudy")} | ${t("common.brandName")}`, "description": `${problem} ${work.data.results.map((result) => translateMaybeKey(result)).join(". ")}`, "structuredData": structuredData }, { "default": async ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="bg-gradient-to-br from-brand-primary via-brand-technical-accent-dark to-brand-primary py-20"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="text-center"> <div class="text-brand-technical-accent-light text-sm font-medium uppercase tracking-wide mb-4"> ${t("common.labels.caseStudy")} </div> <h1 class="text-4xl sm:text-5xl font-bold text-brand-bg-light mb-6 leading-tight"> ${title} </h1> ${work.data.client && renderTemplate`<div class="text-xl text-brand-text-secondary-dark mb-4"> ${translateMaybeKey(work.data.client)} </div>`} <p class="text-xl text-brand-text-secondary-dark mb-8 leading-relaxed"> ${problem} </p> <div class="flex flex-wrap justify-center gap-2 mb-8"> ${work.data.stack.map((tech) => renderTemplate`<span class="px-3 py-1 bg-brand-bg-light/10 text-brand-bg-light text-sm font-medium rounded-full border border-brand-bg-light/20"> ${tech} </span>`)} </div> <a href="/contact" class="inline-flex items-center px-8 py-4 bg-brand-technical-accent-light dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"> ${t("common.actions.discussProject")} <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path> </svg> </a> </div> </div> </section> <section class="py-16 bg-brand-bg-light dark:bg-brand-bg-dark"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="grid grid-cols-1 md:grid-cols-2 gap-10"> <div> <h2 class="text-2xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">${t("workPage.labels.challenge")}</h2> <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark leading-relaxed mb-8">${problem}</p> <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">${t("workDetail.labels.constraints")}</h3> <ul class="space-y-3"> ${work.data.constraints.map((constraint) => renderTemplate`<li class="flex items-start text-brand-text-secondary-light dark:text-brand-text-secondary-dark"> <svg class="w-5 h-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"> <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path> </svg> ${translateMaybeKey(constraint)} </li>`)} </ul> </div> <div> <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">${t("workDetail.labels.approach")}</h3> <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark leading-relaxed mb-8"> ${translateMaybeKey(work.data.approach)} </p> <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">${t("workDetail.labels.deliverables")}</h3> <ul class="space-y-3 mb-8"> ${work.data.deliverables.map((deliverable) => renderTemplate`<li class="flex items-start text-brand-text-secondary-light dark:text-brand-text-secondary-dark"> <svg class="w-5 h-5 text-brand-technical-accent-light dark:text-brand-technical-accent-dark mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> ${translateMaybeKey(deliverable)} </li>`)} </ul> <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">${t("workDetail.labels.techStack")}</h3> <div class="flex flex-wrap gap-2 mb-6"> ${work.data.stack.map((tech) => renderTemplate`<span class="px-3 py-2 bg-brand-primary/10 dark:bg-brand-primary/20 text-brand-primary dark:text-brand-technical-accent-dark text-sm font-medium rounded-lg"> ${tech} </span>`)} </div> <div class="text-sm text-brand-text-secondary-light/90 dark:text-brand-text-secondary-dark/90"> <span class="font-medium">${t("common.labels.timeline")}:</span> ${translateMaybeKey(work.data.timeline)} </div> </div> </div> </div> </section> <section class="py-16 bg-brand-surface-light dark:bg-brand-surface-dark"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <h2 class="text-2xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-8 text-center">${t("workDetail.labels.keyResults")}</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> ${work.data.results.map((result) => renderTemplate`<div class="flex items-start p-4 bg-brand-bg-light dark:bg-brand-bg-dark rounded-lg border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20"> <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> <span class="text-brand-text-primary-light dark:text-brand-text-primary-dark">${translateMaybeKey(result)}</span> </div>`)} </div> </div> </section> <section class="py-20 bg-brand-primary"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> <h2 class="text-3xl font-bold text-brand-bg-light mb-6"> ${t("workDetail.cta.title")} </h2> <p class="text-xl text-brand-text-secondary-dark mb-8 leading-relaxed"> ${t("workDetail.cta.description")} </p> <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"> <a href="/contact" class="inline-flex items-center px-8 py-4 bg-brand-technical-accent-light dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"> ${t("workDetail.cta.primary")} <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> </svg> </a> <a href="/work" class="inline-flex items-center px-8 py-4 border-2 border-brand-bg-light text-brand-bg-light font-semibold rounded-lg hover:bg-brand-bg-light hover:text-brand-primary transition-all duration-200"> ${t("workDetail.cta.secondary")} </a> </div> </div> </section> ` })}`;
+}, "/Users/yooololo/Desktop/Dev/Lorna Dev/lorna-pro/src/pages/work/[...slug].astro", void 0);
+
+const $$file = "/Users/yooololo/Desktop/Dev/Lorna Dev/lorna-pro/src/pages/work/[...slug].astro";
+const $$url = "/work/[...slug]";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$,
+  file: $$file,
+  getStaticPaths,
+  prerender,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
