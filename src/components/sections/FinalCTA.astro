@@ -1,0 +1,49 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t } = getI18n(Astro);
+const checks = [
+  t('home.finalCta.checks.first'),
+  t('home.finalCta.checks.second'),
+  t('home.finalCta.checks.third')
+];
+---
+<section class="py-20 bg-brand-surface-light dark:bg-brand-surface-dark border-t-4 border-t-brand-primary">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-6">
+      {t('home.finalCta.title')}
+    </h2>
+    <p class="text-xl text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-8 leading-relaxed">
+      {t('home.finalCta.description')}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+      <a
+        href="/contact"
+        class="inline-flex items-center px-8 py-4 bg-brand-primary dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
+      >
+        {t('home.finalCta.primary')}
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </a>
+      <a
+        href="/solutions"
+        class="inline-flex items-center px-8 py-4 border-2 border-brand-primary dark:border-brand-technical-accent-dark text-brand-primary dark:text-brand-technical-accent-dark font-semibold rounded-lg hover:bg-brand-primary dark:hover:bg-brand-technical-accent-dark hover:text-brand-bg-light transition-all duration-200"
+      >
+        {t('home.finalCta.secondary')}
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-brand-text-secondary-light dark:text-brand-text-secondary-dark">
+      {checks.map((check) => (
+        <div class="flex items-center justify-center">
+          <svg class="w-5 h-5 text-brand-positive-signal-light dark:text-brand-positive-signal-dark mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          {check}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

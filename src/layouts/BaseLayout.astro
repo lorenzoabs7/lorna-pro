@@ -1,0 +1,180 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { getI18n } from '../i18n/server';
+import { LOCALE_COOKIE_NAME, LOCALE_STORAGE_KEY } from '../i18n/locales';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: URL;
+  structuredData?: any;
+}
+
+const {
+  title,
+  description,
+  image = '/og-image.jpg',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  structuredData
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const { locale } = getI18n(Astro);
+---
+
+<!doctype html>
+<html lang={locale} data-locale={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- Structured Data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+
+    <title>{title}</title>
+    <script is:inline define:vars={{ localeCookieName: LOCALE_COOKIE_NAME, localeStorageKey: LOCALE_STORAGE_KEY }}>
+      (function() {
+        var supported = ['en', 'es', 'it', 'de', 'ru', 'zh'];
+        var fallback = 'en';
+        var oneYear = 60 * 60 * 24 * 365;
+
+        function normalize(value) {
+          if (!value || typeof value !== 'string') return null;
+          var normalized = value.toLowerCase().trim().replace('_', '-');
+          if (supported.indexOf(normalized) !== -1) return normalized;
+          var base = normalized.split('-')[0];
+          return supported.indexOf(base) !== -1 ? base : null;
+        }
+
+        function readCookie(name) {
+          var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+          return match ? decodeURIComponent(match[1]) : null;
+        }
+
+        function detectBrowserLocale() {
+          var candidates = Array.isArray(navigator.languages) && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language];
+          for (var i = 0; i < candidates.length; i += 1) {
+            var locale = normalize(candidates[i]);
+            if (locale) return locale;
+          }
+          return null;
+        }
+
+        var cookieLocale = normalize(readCookie(localeCookieName));
+        var storedLocale = null;
+        try {
+          storedLocale = normalize(localStorage.getItem(localeStorageKey));
+        } catch (_error) {
+          storedLocale = null;
+        }
+
+        var locale = cookieLocale || storedLocale || detectBrowserLocale() || fallback;
+        document.documentElement.lang = locale;
+        document.documentElement.dataset.locale = locale;
+        window.__LORNA_LOCALE__ = locale;
+        document.cookie = localeCookieName + '=' + encodeURIComponent(locale) + '; path=/; max-age=' + oneYear + '; SameSite=Lax';
+        try {
+          localStorage.setItem(localeStorageKey, locale);
+        } catch (_error) {
+          // no-op
+        }
+      })();
+    </script>
+    <script is:inline>
+      (function() {
+        var s = localStorage.getItem('theme');
+        var p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var d = s === 'dark' || (s !== 'light' && p);
+        if (d) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+      })();
+    </script>
+  </head>
+  <body class="bg-brand-bg-light dark:bg-brand-bg-dark text-brand-text-primary-light dark:text-brand-text-primary-dark font-sans antialiased">
+    <Navigation currentPath={currentPath} />
+
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Analytics -->
+    <script>
+      // Plausible Analytics
+      if (typeof window !== 'undefined' && window.location.hostname === 'lornadev.com') {
+        const script = document.createElement('script');
+        script.src = 'https://plausible.io/js/script.js';
+        script.defer = true;
+        script.setAttribute('data-domain', 'lornadev.com');
+        document.head.appendChild(script);
+      }
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script>
+      if (typeof window !== 'undefined' && window.location.hostname === 'lornadev.com') {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        function gtag(...args: any[]){(window as any).dataLayer.push(args);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+      }
+    </script>
+
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Focus styles for accessibility – technical accent */
+      a:focus,
+      button:focus,
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: 2px solid var(--brand-focus);
+        outline-offset: 2px;
+      }
+      :root:not(.dark) { --brand-focus: #3A6EA5; }
+      .dark { --brand-focus: #4A82BC; }
+
+      /* Remove focus outline for mouse users */
+      .js-focus-visible :focus:not(.focus-visible) {
+        outline: none;
+      }
+
+      /* Loading states */
+      .loading {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    </style>
+  </body>
+</html>

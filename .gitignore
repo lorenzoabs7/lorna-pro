@@ -1,0 +1,74 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.astro/
+.output/
+*.local
+
+# Environment and secrets (keep .env.example)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+contact_submissions.db
+
+# Logs and debug
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and editor
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+*~
+.project
+.settings/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+
+# Testing and coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Cache and temp
+.cache/
+.temp/
+.tmp/
+*.tsbuildinfo
+.eslintcache
+.prettiercache
+
+# Vite
+node_modules/.vite/
+
+# Optional: lock only one package manager (uncomment if you want to ignore others)
+# package-lock.json
+# yarn.lock
+# bun.lockb

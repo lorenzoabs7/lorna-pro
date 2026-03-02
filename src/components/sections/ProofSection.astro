@@ -1,0 +1,66 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t } = getI18n(Astro);
+
+const cards = [
+  {
+    title: t('home.proof.cards.delivery.title'),
+    description: t('home.proof.cards.delivery.description'),
+    tone: 'positive'
+  },
+  {
+    title: t('home.proof.cards.reliability.title'),
+    description: t('home.proof.cards.reliability.description'),
+    tone: 'accent'
+  },
+  {
+    title: t('home.proof.cards.scaling.title'),
+    description: t('home.proof.cards.scaling.description'),
+    tone: 'primary'
+  }
+] as const;
+---
+
+<section class="py-16 bg-brand-text-secondary-light/5 dark:bg-brand-text-secondary-dark/5 border-t-2 border-t-brand-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">{t('home.proof.title')}</h2>
+      <p class="text-lg text-brand-text-secondary-light dark:text-brand-text-secondary-dark max-w-2xl mx-auto">
+        {t('home.proof.description')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {cards.map((card) => (
+        <div class="text-center p-6 bg-brand-bg-light dark:bg-brand-surface-dark rounded-lg shadow-sm border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20">
+          <div class={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+            card.tone === 'positive'
+              ? 'bg-brand-positive-signal-light/10 dark:bg-brand-positive-signal-dark/10'
+              : card.tone === 'accent'
+                ? 'bg-brand-technical-accent-light/10 dark:bg-brand-technical-accent-dark/10'
+                : 'bg-brand-primary/10 dark:bg-brand-primary/20'
+          }`}>
+            {card.tone === 'positive' && (
+              <svg class="w-8 h-8 text-brand-positive-signal-light dark:text-brand-positive-signal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            )}
+            {card.tone === 'accent' && (
+              <svg class="w-8 h-8 text-brand-technical-accent-light dark:text-brand-technical-accent-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            )}
+            {card.tone === 'primary' && (
+              <svg class="w-8 h-8 text-brand-primary dark:text-brand-technical-accent-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+              </svg>
+            )}
+          </div>
+          <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-2">{card.title}</h3>
+          <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark">{card.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

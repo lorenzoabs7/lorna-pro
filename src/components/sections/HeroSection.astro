@@ -1,0 +1,50 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t } = getI18n(Astro);
+const checks = [
+  t('home.hero.checks.first'),
+  t('home.hero.checks.second'),
+  t('home.hero.checks.third')
+];
+---
+<section class="bg-brand-bg-light dark:bg-brand-bg-dark py-20 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-6 leading-tight font-serif">
+        {t('home.hero.titlePrefix')}
+        <span class="text-brand-primary dark:text-brand-technical-accent-dark">{t('home.hero.titleHighlight')}</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-8 max-w-3xl mx-auto leading-relaxed">
+        {t('home.hero.description')}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <a
+          href="/contact"
+          class="inline-flex items-center px-8 py-4 bg-brand-primary dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
+        >
+          {t('home.hero.ctaPrimary')}
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a
+          href="/solutions"
+          class="inline-flex items-center px-8 py-4 border-2 border-brand-primary dark:border-brand-technical-accent-dark text-brand-primary dark:text-brand-technical-accent-dark font-semibold rounded-lg hover:bg-brand-primary dark:hover:bg-brand-technical-accent-dark hover:text-brand-bg-light transition-all duration-200"
+        >
+          {t('home.hero.ctaSecondary')}
+        </a>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-8 text-sm text-brand-text-secondary-light dark:text-brand-text-secondary-dark">
+        {checks.map((check) => (
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-brand-positive-signal-light dark:text-brand-positive-signal-dark mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            {check}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t } = getI18n(Astro);
+
+const outcomeItems = [
+  { key: 'release', number: '01' },
+  { key: 'reliability', number: '02' },
+  { key: 'throughput', number: '03' },
+  { key: 'cost', number: '04' }
+] as const;
+
+const statusItems = [
+  { label: t('home.outcomes.statusLabels.architecture'), value: t('home.outcomes.status.architecture') },
+  { label: t('home.outcomes.statusLabels.cicd'), value: t('home.outcomes.status.cicd') },
+  { label: t('home.outcomes.statusLabels.monitoring'), value: t('home.outcomes.status.monitoring') },
+  { label: t('home.outcomes.statusLabels.documentation'), value: t('home.outcomes.status.documentation') }
+] as const;
+---
+
+<section class="py-20 bg-brand-text-secondary-light/5 dark:bg-brand-text-secondary-dark/5 border-t-2 border-t-brand-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">{t('home.outcomes.title')}</h2>
+      <p class="text-lg text-brand-text-secondary-light dark:text-brand-text-secondary-dark max-w-2xl mx-auto">
+        {t('home.outcomes.description')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {outcomeItems.map((item) => (
+        <div class="text-center p-6 bg-brand-bg-light dark:bg-brand-surface-dark rounded-lg shadow-sm border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20">
+          <div class="text-4xl font-bold text-brand-technical-accent-light dark:text-brand-technical-accent-dark mb-2">{item.number}</div>
+          <div class="text-sm font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark mb-1">{t(`home.outcomes.items.${item.key}.label`)}</div>
+          <div class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark text-sm">
+            {t(`home.outcomes.items.${item.key}.description`)}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-brand-bg-light dark:bg-brand-surface-dark rounded-lg shadow-sm border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20 p-8">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">{t('home.outcomes.example.title')}</h3>
+          <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-6 leading-relaxed">
+            {t('home.outcomes.example.description')}
+          </p>
+          <div class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <span class="font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark">{t('common.labels.before')}:</span>
+              <span class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark ml-2">{t('home.outcomes.example.before')}</span>
+            </div>
+            <div>
+              <span class="font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark">{t('common.labels.after')}:</span>
+              <span class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark ml-2">{t('home.outcomes.example.after')}</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-80">
+          <div class="bg-brand-text-secondary-light/10 dark:bg-brand-text-secondary-dark/10 rounded-lg p-6">
+            <div class="space-y-4">
+              {statusItems.map((item) => (
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark">{item.label}</span>
+                  <span class="text-sm text-brand-positive-signal-light dark:text-brand-positive-signal-dark font-medium">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

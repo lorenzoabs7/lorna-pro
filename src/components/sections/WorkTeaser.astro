@@ -1,0 +1,74 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t, raw } = getI18n(Astro);
+
+const cards = [
+  { key: 'cicd', dot: 'bg-brand-positive-signal-light dark:bg-brand-positive-signal-dark' },
+  { key: 'api', dot: 'bg-brand-technical-accent-light dark:bg-brand-technical-accent-dark' },
+  { key: 'integration', dot: 'bg-brand-primary dark:bg-brand-technical-accent-dark' }
+] as const;
+
+const cardStacks = {
+  cicd: raw<string[]>('home.workTeaser.cards.cicd.stack') ?? [],
+  api: raw<string[]>('home.workTeaser.cards.api.stack') ?? [],
+  integration: raw<string[]>('home.workTeaser.cards.integration.stack') ?? []
+};
+---
+<section class="py-20 bg-brand-surface-light dark:bg-brand-surface-dark border-t-2 border-t-brand-primary border-b border-b-brand-primary/20 dark:border-b-brand-primary/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">{t('home.workTeaser.title')}</h2>
+      <p class="text-lg text-brand-text-secondary-light dark:text-brand-text-secondary-dark max-w-2xl mx-auto">
+        {t('home.workTeaser.description')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {cards.map((card) => (
+        <div class="group bg-brand-bg-light dark:bg-brand-bg-dark rounded-lg border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20 hover:border-brand-primary/40 dark:hover:border-brand-technical-accent-dark/50 transition-all duration-200 overflow-hidden">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class={`w-3 h-3 rounded-full mr-3 ${card.dot}`}></div>
+              <span class="text-sm font-medium text-brand-text-secondary-light dark:text-brand-text-secondary-dark">{t(`home.workTeaser.cards.${card.key}.category`)}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-3 group-hover:text-brand-primary dark:group-hover:text-brand-technical-accent-dark transition-colors">
+              {t(`home.workTeaser.cards.${card.key}.title`)}
+            </h3>
+            <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-4 leading-relaxed">
+              {t(`home.workTeaser.cards.${card.key}.description`)}
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="text-sm text-brand-text-secondary-light dark:text-brand-text-secondary-dark">
+                <span class="font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark">{t('common.labels.challenge')}:</span> {t(`home.workTeaser.cards.${card.key}.challenge`)}
+              </div>
+              <div class="text-sm text-brand-text-secondary-light dark:text-brand-text-secondary-dark">
+                <span class="font-medium text-brand-text-primary-light dark:text-brand-text-primary-dark">{t('common.labels.result')}:</span> {t(`home.workTeaser.cards.${card.key}.result`)}
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {cardStacks[card.key].map((tech) => (
+                <span class="px-2 py-1 bg-brand-primary/10 dark:bg-brand-primary/20 text-brand-primary dark:text-brand-technical-accent-dark text-xs font-medium rounded">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-6">
+        {t('home.workTeaser.lead')}
+      </p>
+      <a
+        href="/work"
+        class="inline-flex items-center px-8 py-4 bg-brand-primary dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
+      >
+        {t('home.workTeaser.cta')}
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

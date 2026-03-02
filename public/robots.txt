@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+Allow: /solutions/
+Allow: /work/
+Allow: /about/
+Allow: /contact/
+Allow: /insights/
+
+# Disallow admin areas and API
+Disallow: /api/
+Disallow: /admin/
+
+# Disallow draft content
+Disallow: /*?draft=true*
+
+# Sitemap
+Sitemap: https://lornadev.com/sitemap-0.xml

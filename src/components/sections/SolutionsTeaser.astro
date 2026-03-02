@@ -1,0 +1,77 @@
+---
+import { getI18n } from '../../i18n/server';
+
+const { t } = getI18n(Astro);
+
+const cards = [
+  { id: 'automation', href: '/solutions#automation' },
+  { id: 'architecture', href: '/solutions#architecture' },
+  { id: 'performance', href: '/solutions#performance' },
+  { id: 'integrations', href: '/solutions#integrations' },
+  { id: 'tools', href: '/solutions#tools' },
+  { id: 'mvp', href: '/solutions#mvp' }
+] as const;
+---
+<section class="py-20 bg-brand-bg-light dark:bg-brand-bg-dark border-t-2 border-t-brand-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-4">{t('home.solutionsTeaser.title')}</h2>
+      <p class="text-lg text-brand-text-secondary-light dark:text-brand-text-secondary-dark max-w-2xl mx-auto">
+        {t('home.solutionsTeaser.description')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {cards.map((card) => (
+        <div class="group p-6 bg-brand-surface-light dark:bg-brand-surface-dark rounded-lg border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20 hover:border-brand-primary/40 dark:hover:border-brand-technical-accent-dark/50 transition-all duration-200">
+          <div class="w-12 h-12 bg-brand-primary/10 dark:bg-brand-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-primary/15 dark:group-hover:bg-brand-primary/25 transition-colors">
+            <svg class="w-6 h-6 text-brand-primary dark:text-brand-technical-accent-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              {card.id === 'automation' && (
+                <>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </>
+              )}
+              {card.id === 'architecture' && (
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              )}
+              {card.id === 'performance' && (
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              )}
+              {card.id === 'integrations' && (
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              )}
+              {card.id === 'tools' && (
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              )}
+              {card.id === 'mvp' && (
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              )}
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-3">
+            {t(`home.solutionsTeaser.cards.${card.id}.title`)}
+          </h3>
+          <p class="text-brand-text-secondary-light dark:text-brand-text-secondary-dark mb-4">
+            {t(`home.solutionsTeaser.cards.${card.id}.description`)}
+          </p>
+          <a href={card.href} class="text-brand-primary dark:text-brand-technical-accent-dark font-medium hover:underline transition-colors">
+            {t(`home.solutionsTeaser.cards.${card.id}.link`)} →
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/solutions"
+        class="inline-flex items-center px-8 py-4 bg-brand-primary dark:bg-brand-technical-accent-dark text-brand-bg-light font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
+      >
+        {t('home.solutionsTeaser.cta')}
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
