@@ -2,6 +2,8 @@
 import ThemeToggle from './ThemeToggle.astro';
 import LanguageSelector from './LanguageSelector.astro';
 import { getI18n } from '../i18n/server';
+import logoSrc from '../assets/logo/lornaLogo.svg?url';
+import logoSrcDark from '../assets/logo/lornaLogo-dark.svg?url';
 
 const { currentPath = '' } = Astro.props;
 const { t } = getI18n(Astro);
@@ -31,11 +33,10 @@ const links = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="flex-shrink-0">
-        <a
-          href="/"
-          class="text-xl font-bold text-brand-primary dark:text-brand-bg-light hover:opacity-90 transition-opacity"
-        >
-          {t('common.brandName')}
+        <a href="/" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity" aria-label={t('common.brandName')}>
+          <img src={logoSrc} alt="" class="h-9 w-auto dark:hidden" width="135" height="36" />
+          <img src={logoSrcDark} alt="" class="h-9 w-auto hidden dark:block" width="135" height="36" loading="eager" />
+          <span class="text-xl font-bold text-brand-primary dark:text-brand-bg-light">{t('common.brandName')}</span>
         </a>
       </div>
 

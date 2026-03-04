@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: '#220607',
+          primary: '#4616bf',// this is 69, 22, 191 (94+97)
           'surface-light': '#E0D8D2',
           'bg-light': '#E6DED8',
           'text-primary-light': '#1A1A1A',
