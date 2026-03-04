@@ -1,1 +1,1411 @@
-{}
+{
+  "common": {
+    "brandName": "Lorna Dev",
+    "actions": {
+      "learnMore": "Mehr erfahren",
+      "getInTouch": "Kontakt aufnehmen",
+      "bookConsultation": "Beratung buchen",
+      "viewSolutions": "Lösungen ansehen",
+      "viewAllSolutions": "Alle Lösungen ansehen",
+      "exploreSolutions": "Lösungen entdecken",
+      "startProject": "Projekt starten",
+      "startConversation": "Gespräch starten",
+      "readCaseStudy": "Fallstudie lesen",
+      "viewCaseStudyDetails": "Details",
+      "viewAllCaseStudies": "Alle Fallstudien ansehen",
+      "sendMessage": "Nachricht senden",
+      "sendAnotherMessage": "Eine weitere Nachricht senden",
+      "sending": "Wird gesendet...",
+      "discussProject": "Ähnliches Projekt besprechen"
+    },
+    "labels": {
+      "timeline": "Zeitrahmen",
+      "model": "Modell",
+      "challenge": "Herausforderung",
+      "result": "Ergebnis",
+      "before": "Vorher",
+      "after": "Nachher",
+      "client": "Kunde",
+      "caseStudy": "Fallstudie",
+      "featuredProjects": "Ausgewählte Projekte",
+      "allCaseStudies": "Alle Fallstudien",
+      "productionReady": "Produktion",
+      "readyCode": "Fertiger Code"
+    },
+    "engagementModel": {
+      "fixed": "Festes Leistungsumfang",
+      "retainer": "Retainer",
+      "advisory": "Beratung"
+    },
+    "language": {
+      "selectorAriaLabel": "Sprache auswählen",
+      "selectorTitle": "Sprache auswählen",
+      "optionsAriaLabel": "Verfügbare Sprachen",
+      "names": {
+        "en": "English",
+        "es": "Español",
+        "it": "Italiano",
+        "de": "Deutsch",
+        "ru": "Русский",
+        "zh": "中文"
+      }
+    }
+  },
+  "theme": {
+    "toggle": "Dunkelmodus umschalten"
+  },
+  "navigation": {
+    "ariaLabel": "Hauptnavigation",
+    "links": {
+      "home": "Startseite",
+      "solutions": "Lösungen",
+      "store": "Shop",
+      "about": "Über uns"
+    },
+    "mobileMenu": {
+      "open": "Hauptmenü öffnen"
+    },
+    "cta": "Kontakt aufnehmen"
+  },
+  "footer": {
+    "description": "Engineering-Consulting mit Fokus auf Umsetzung. Wir bauen produktionsreife Systeme, automatisieren Workflows und beschleunigen Ihre Entwicklungsgeschwindigkeit.",
+    "email": "hello@lornadev.com",
+    "location": "Remote-first, globale Lieferung",
+    "sections": {
+      "services": "Leistungen",
+      "company": "Unternehmen"
+    },
+    "services": {
+      "automation": "Automatisierung & Workflows",
+      "architecture": "Systemarchitektur",
+      "performance": "Performance-Optimierung",
+      "integrations": "API-Integrationen"
+    },
+    "company": {
+      "store": "Shop",
+      "about": "Über uns",
+      "insights": "Insights"
+    },
+    "copyright": "© {year} Lorna Dev. Alle Rechte vorbehalten.",
+    "links": {
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Lorna Dev | Engineering Consulting für produktionsreife Systeme",
+      "description": "Wir liefern produktionsreife Softwaresysteme, automatisieren Workflows und beschleunigen die Entwicklungsgeschwindigkeit. Engineering-Consulting mit Fokus auf Ergebnisse, nicht auf Buzzwords."
+    },
+    "hero": {
+      "titlePrefix": "Engineering, das",
+      "titleHighlight": "liefert",
+      "description": "Wir bauen produktionsreife Systeme, automatisieren Workflows und beschleunigen Ihre Entwicklungsgeschwindigkeit. Keine Buzzwords. Nur zuverlässiges Engineering, das Ergebnisse liefert.",
+      "ctaPrimary": "Beratung buchen",
+      "ctaSecondary": "Lösungen ansehen",
+      "checks": {
+        "first": "Produktionsreifer Code",
+        "second": "Remote-First Delivery",
+        "third": "Schnell zur Wertschöpfung"
+      }
+    },
+    "proof": {
+      "title": "Was wir liefern",
+      "description": "Engineering-Services mit Fokus auf Produktionszuverlässigkeit und Business-Impact",
+      "cards": {
+        "delivery": {
+          "title": "Schnelle, zuverlässige Lieferung",
+          "description": "Wir liefern produktionsreifen Code mit umfassenden Tests, Dokumentation und Deployment-Pipelines."
+        },
+        "reliability": {
+          "title": "Produktionszuverlässigkeit",
+          "description": "Systeme für Skalierung entwickelt – mit Monitoring, Fehlerbehandlung und automatisierter Recovery."
+        },
+        "scaling": {
+          "title": "Kosteneffizientes Skalieren",
+          "description": "Infrastrukturkosten optimieren, ohne Performance- und Zuverlässigkeitsstandards zu kompromittieren."
+        }
+      }
+    },
+    "solutionsTeaser": {
+      "title": "Engineering-Lösungen",
+      "description": "Spezialisierte Services für Teams, die zuverlässige Systeme, automatisierte Workflows und schnellere Lieferung brauchen",
+      "cards": {
+        "automation": {
+          "title": "Automatisierung & Workflows",
+          "description": "Reduzieren Sie manuelle Tätigkeiten um 80% mit intelligenten Automatisierungssystemen, CI/CD-Pipelines und Workflow-Optimierung.",
+          "link": "Mehr erfahren"
+        },
+        "architecture": {
+          "title": "Systemarchitektur & Refactors",
+          "description": "Modernisieren Sie Legacy-Systeme, entwerfen Sie skalierbare Architekturen und refaktorisieren Sie für Wartbarkeit und Performance.",
+          "link": "Mehr erfahren"
+        },
+        "performance": {
+          "title": "Performance- & Kostenoptimierung",
+          "description": "Reduzieren Sie Infrastrukturkosten um 40% und verbessern Sie gleichzeitig Antwortzeiten und Systemzuverlässigkeit.",
+          "link": "Mehr erfahren"
+        },
+        "integrations": {
+          "title": "API-Integrationen & Datenflüsse",
+          "description": "Verbinden Sie Systeme nahtlos mit robusten API-Integrationen, Datenpipelines und Zahlungsabwicklung.",
+          "link": "Mehr erfahren"
+        },
+        "tools": {
+          "title": "Interne Tools & Dashboards",
+          "description": "Individuelle Admin-Panels, Analytics-Dashboards und Produktivitätstools – gebaut für Ihre spezifischen Workflows.",
+          "link": "Mehr erfahren"
+        },
+        "mvp": {
+          "title": "Rapid MVP → Produktion",
+          "description": "MVPs in Wochen starten und anschließend mit Enterprise-Grade Zuverlässigkeit und Monitoring auf Produktion skalieren.",
+          "link": "Mehr erfahren"
+        }
+      },
+      "cta": "Alle Lösungen ansehen"
+    },
+    "onlineBusiness": {
+      "eyebrow": "Online-Business",
+      "title": "Wir bieten Lösungen an und verkaufen Produkte online",
+      "description": "Lorna Dev ist ein Remote-first Online-Business, das Engineering-Services liefert und digitale Produkte im eigenen Haus entwickelt.",
+      "statement": "Unsere Online-Aktivitäten umfassen Consulting-Engagements, produktisierte technische Services und den Direktverkauf digitaler Assets, die von unserem Team erstellt werden.",
+      "cards": {
+        "products": {
+          "title": "Digitale Produkte, die wir erstellen",
+          "description": "Wir entwickeln und verkaufen praktische digitale Produkte wie Automatisierungs-Templates, technische Assets und interne Tooling-Pakete."
+        },
+        "solutions": {
+          "title": "Individuelle Lösungen für Kunden",
+          "description": "Wir liefern Implementierungsleistungen für Architektur-, Integrations- und Automatisierungsprojekte – zugeschnitten auf jeden Business-Need."
+        },
+        "fulfillment": {
+          "title": "Online-Lieferung und Support",
+          "description": "Projekte und Produkte werden online geliefert – mit Dokumentation, Onboarding-Support und nachgelagerter technischer Unterstützung."
+        }
+      },
+      "checks": {
+        "first": "Remote-First Service Delivery",
+        "second": "Verkauf digitaler Produkte",
+        "third": "Laufender Kundensupport"
+      },
+      "ctaPrimary": "Lösungen entdecken",
+      "ctaSecondary": "Kontakt für Produkte und Services"
+    },
+    "process": {
+      "title": "So arbeiten wir",
+      "description": "Ein bewährter Prozess, um produktionsreife Engineering-Lösungen zu liefern",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Planung",
+          "description": "Wir analysieren Ihre aktuellen Systeme, identifizieren Pain Points und entwerfen eine technische Roadmap mit klaren Deliverables und Zeitplänen.",
+          "duration": "1-2 Wochen"
+        },
+        "architecture": {
+          "title": "Architektur & Design",
+          "description": "Wir erstellen detaillierte technische Spezifikationen, Systemarchitektur und Implementierungspläne gemeinsam mit Ihrem Team – für Alignment.",
+          "duration": "1-3 Wochen"
+        },
+        "implementation": {
+          "title": "Implementierung & Lieferung",
+          "description": "Wir bauen, testen und deployen produktionsreifen Code – mit umfassender Dokumentation, Monitoring und Deployment-Pipelines.",
+          "duration": "2-12 Wochen"
+        },
+        "support": {
+          "title": "Support & Optimierung",
+          "description": "Wir bieten Post-Launch Support, Performance-Monitoring und kontinuierliche Optimierung, um langfristigen Erfolg sicherzustellen.",
+          "duration": "Laufend"
+        }
+      },
+      "ctaLead": "Bereit, Ihre Entwicklungsgeschwindigkeit zu beschleunigen?",
+      "cta": "Projekt starten"
+    },
+    "outcomes": {
+      "title": "Projektergebnisse",
+      "description": "Typische Verbesserungen durch fokussierte Arbeit an Delivery, Zuverlässigkeit und Operations",
+      "items": {
+        "release": {
+          "label": "Release-Prozess",
+          "description": "Wechsel von manuellen Releases zu wiederholbaren Deployment-Workflows mit Tests und Checks"
+        },
+        "reliability": {
+          "label": "Zuverlässigkeit",
+          "description": "Besseres Monitoring, Alerting und Rollback-Pfade, die das Downtime-Risiko reduzieren"
+        },
+        "throughput": {
+          "label": "Team-Durchsatz",
+          "description": "Weniger Handoff-Probleme und weniger Rework durch klarere Engineering-Workflows"
+        },
+        "cost": {
+          "label": "Betriebskosten",
+          "description": "Sauberere Infrastruktur und Automatisierung, die vermeidbaren Overhead reduzieren"
+        }
+      },
+      "example": {
+        "title": "Beispiel-Engagement",
+        "description": "Ein Produktteam wechselte von mehrstündigen manuellen Releases zu einer automatisierten Pipeline mit Rollback-Support, reduzierte Release-Reibung und senkte den operativen Stress im Team.",
+        "before": "manuelle Checklisten, unvorhersehbare Release-Zeitfenster",
+        "after": "automatisierte Releases, klarere Zuständigkeiten bei Incidents"
+      },
+      "status": {
+        "architecture": "Verbessert",
+        "cicd": "Automatisiert",
+        "monitoring": "Etabliert",
+        "documentation": "Strukturiert"
+      },
+      "statusLabels": {
+        "architecture": "Systemarchitektur",
+        "cicd": "CI/CD-Pipeline",
+        "monitoring": "Monitoring",
+        "documentation": "Dokumentation"
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "description": "Häufige Fragen zu unserem Engineering-Consulting-Prozess",
+      "items": {
+        "quality": {
+          "question": "Wie stellen Sie Code-Qualität und Produktionsreife sicher?",
+          "answer": "Jedes Projekt umfasst umfassende Tests (Unit, Integration, e2e), Code-Reviews, Dokumentation, Deployment-Pipelines und Monitoring-Setup. Wir folgen Best Practices der Branche und liefern produktionsreifen Code, den Ihr Team warten und erweitern kann."
+        },
+        "engagement": {
+          "question": "Wie sieht Ihr typisches Engagement-Modell aus?",
+          "answer": "Wir bieten flexible Engagement-Modelle: Fixed-Scope Projekte für konkrete Deliverables, Retainer-basiertes Consulting für laufenden Support oder Advisory-Services für Architektur-Reviews. Jedes Projekt startet mit einer klaren Vereinbarung zu Scope, Timeline und Deliverables."
+        },
+        "team": {
+          "question": "Arbeiten Sie mit unserem bestehenden Team zusammen?",
+          "answer": "Absolut. Wir arbeiten eng mit Ihrem Entwicklungsteam zusammen, inklusive Knowledge Transfer, Code-Reviews und Dokumentation. Unser Ziel ist es, die Fähigkeiten Ihres Teams zu stärken, nicht es zu ersetzen. Wir können remote oder on-site arbeiten – je nach Präferenz."
+        },
+        "stack": {
+          "question": "Auf welche Technologien sind Sie spezialisiert?",
+          "answer": "Wir arbeiten mit modernen Web-Technologien, Cloud-Plattformen (AWS, GCP, Azure), Containerisierung (Docker, Kubernetes) und passen uns Ihrem Tech-Stack an. Unser Fokus liegt auf zuverlässigen Lösungen – nicht darauf, bestimmte Technologien zu pushen. Wenn Sie einen bevorzugten Stack haben, arbeiten wir darin."
+        },
+        "timeline": {
+          "question": "Wie lange dauern Projekte typischerweise?",
+          "answer": "Projektlaufzeiten variieren je nach Umfang und Komplexität. Ein typisches Automatisierungsprojekt dauert 2-4 Wochen, während ein vollständiger System-Refactor 6-12 Wochen dauern kann. Wir liefern detaillierte Zeitpläne in der Planungsphase und halten Sie mit wöchentlichen Fortschrittsberichten auf dem Laufenden."
+        },
+        "scope": {
+          "question": "Was, wenn sich der Projektumfang ändern muss?",
+          "answer": "Wir verstehen, dass Anforderungen sich weiterentwickeln können. Wir arbeiten mit klaren Change-Management-Prozessen und regelmäßigen Check-ins, um sicherzustellen, dass wir bauen, was Sie brauchen. Änderungen am Scope werden dokumentiert und vor der Implementierung abgestimmt."
+        }
+      },
+      "ctaLead": "Haben Sie eine andere Frage? Wir freuen uns, von Ihnen zu hören.",
+      "cta": "Kontakt aufnehmen"
+    },
+    "workTeaser": {
+      "title": "Aktuelle Arbeit",
+      "description": "Engineering-Projekte mit messbarem Business-Impact",
+      "cards": {
+        "cicd": {
+          "category": "Automatisierung & Workflow",
+          "title": "Modernisierung der CI/CD-Pipeline",
+          "description": "Manuelle Deployment-Prozesse durch automatisierte Pipelines ersetzt und die Release-Zeit von 4 Stunden auf 20 Minuten reduziert.",
+          "challenge": "Manuelle Deployments verursachten Verzögerungen und Fehler",
+          "result": "90% schnellere Releases, keine Deployment-Fehler",
+          "stack": [
+            "GitHub Actions",
+            "Docker",
+            "Kubernetes"
+          ]
+        },
+        "api": {
+          "category": "Systemarchitektur",
+          "title": "API-Performance-Optimierung",
+          "description": "REST-API-Endpunkte und Datenbankabfragen optimiert, Antwortzeiten um 60% verbessert und Serverkosten reduziert.",
+          "challenge": "Langsame API-Antworten unter Last",
+          "result": "60% schnellere Antworten, 30% Kosteneinsparung",
+          "stack": [
+            "Node.js",
+            "PostgreSQL",
+            "Redis"
+          ]
+        },
+        "integration": {
+          "category": "Integration & Automatisierung",
+          "title": "Integration eines Drittanbieter-Systems",
+          "description": "Legacy-CRM mit modernen Payment-Providern und Inventory-Systemen verbunden und die Auftragsabwicklung automatisiert.",
+          "challenge": "Manuelle Datensynchronisation zwischen Systemen",
+          "result": "95% weniger manueller Verarbeitungsaufwand",
+          "stack": [
+            "Stripe API",
+            "Zapier",
+            "Webhooks"
+          ]
+        }
+      },
+      "lead": "Ausgewählte Arbeiten auf Anfrage verfügbar. Alle Projekte enthalten detaillierte Fallstudien.",
+      "cta": "Alle Fallstudien ansehen"
+    },
+    "finalCta": {
+      "title": "Bereit, bessere Software zu liefern?",
+      "description": "Lassen Sie uns über Ihre Engineering-Herausforderungen sprechen und wie wir Ihnen helfen können, produktionsreife Systeme schneller und zuverlässiger zu liefern.",
+      "primary": "Beratung buchen",
+      "secondary": "Lösungen entdecken",
+      "checks": {
+        "first": "Keine langfristigen Verträge",
+        "second": "Transparente Preise",
+        "third": "Remote-freundlich"
+      }
+    }
+  },
+  "storePage": {
+    "meta": {
+      "title": "Shop | Lorna Dev Digitale Produkte",
+      "description": "Durchsuchen Sie Lorna Dev Online-Storefronts für digitale Produkte und technische Assets. Etsy- und Gumroad-Links sind hier verfügbar, ein interner Shop ist geplant."
+    },
+    "hero": {
+      "title": "Storefronts",
+      "highlight": "und Produktlinks",
+      "description": "Dies ist unser offizieller Store-Hub. Nutzen Sie die Links unten, um auf unsere Produkt-Storefronts und digitale Produkte zuzugreifen."
+    },
+    "verification": {
+      "title": "Unternehmensverifizierung",
+      "description": "Lorna Dev ist ein Online-Business, das Engineering-Lösungen anbietet und digitale Produkte über Online-Storefronts verkauft."
+    },
+    "comingSoon": "Demnächst verfügbar",
+    "links": {
+      "etsy": {
+        "label": "Etsy",
+        "description": "Marketplace-Storefront für ausgewählte digitale Produkte und Templates.",
+        "cta": "Etsy öffnen",
+        "url": "https://lornacreativeco.etsy.com"
+      },
+      "gumroad": {
+        "label": "Gumroad",
+        "description": "Direkte digitale Produkt-Listings, Downloads und Updates.",
+        "cta": "Gumroad öffnen",
+        "url": "https://gumroad.com"
+      },
+      "internal": {
+        "label": "Lorna Store",
+        "description": "Zukünftiger In-Site-Shop, in dem Produkte direkt auf dieser Website gekauft werden können.",
+        "cta": "Roadmap für den internen Shop",
+        "url": "/store#internal-store"
+      }
+    },
+    "future": {
+      "title": "Roadmap für den internen Shop",
+      "description": "Wir bereiten einen nativen In-Site Checkout-Flow für zukünftige Produkt-Launches vor."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Über Lorna Dev | Engineering Consulting für produktionsreife Systeme",
+      "description": "Wir sind Engineering Consultants mit Fokus auf Delivery. Wir bauen produktionsreife Systeme, automatisieren Workflows und beschleunigen Entwicklungsgeschwindigkeit seit Tag eins."
+    },
+    "hero": {
+      "titlePrefix": "Engineering, das",
+      "titleHighlight": "liefert",
+      "description": "Wir bauen produktionsreife Systeme, automatisieren Workflows und beschleunigen Ihre Entwicklungsgeschwindigkeit. Keine Buzzwords. Nur zuverlässiges Engineering, das liefert."
+    },
+    "story": {
+      "title": "Unsere Geschichte",
+      "subtitle": "Aus praktischer Engineering-Erfahrung entstanden",
+      "lead": "Lorna Dev entstand aus einem typischen Problem: Code zu shippen ist das eine, ihn zuverlässig zu betreiben das andere.",
+      "paragraphs": {
+        "first": "In Startups und Enterprise-Teams tauchten immer wieder dieselben Probleme auf: fragile Releases, unklare Ownership und Engineering-Zeit, die durch vermeidbare Operations-Arbeit verloren geht.",
+        "second": "Der Fokus ist deshalb klar: zuverlässige Systeme, klare Delivery-Workflows und Software-Teams, die liefern können – ohne ständiges Fire-Fighting."
+      }
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "subtitle": "Die Prinzipien, die unsere Arbeit und die Ergebnisse, die wir liefern, leiten",
+      "cards": {
+        "execution": {
+          "title": "Umsetzung zuerst",
+          "description": "Wir fokussieren uns darauf, Dinge zu erledigen. Nicht perfekt, aber produktionsreif. Shipping schlägt Perfektion – jedes Mal."
+        },
+        "clarity": {
+          "title": "Klarheit statt Komplexität",
+          "description": "Einfache Lösungen für komplexe Probleme. Wir schneiden durch das Rauschen und fokussieren uns auf das, was wirklich zählt für Ihr Business."
+        },
+        "reliability": {
+          "title": "Zuverlässigkeit über alles",
+          "description": "Systeme, die funktionieren, wenn Sie sie brauchen. Wir bauen für Uptime, Monitoring und saubere Failure-Handling."
+        },
+        "speed": {
+          "title": "Geschwindigkeit mit Korrektheit",
+          "description": "Schnelle Lieferung heißt nicht, Abkürzungen zu nehmen. Wir bewegen uns schnell und halten Qualitäts- und Zuverlässigkeitsstandards ein."
+        },
+        "partnership": {
+          "title": "Echte Partnerschaft",
+          "description": "Wir sind keine Vendoren. Wir sind Partner, die in Ihren Erfolg investiert sind. Knowledge Transfer und Team-Empowerment sind integriert."
+        },
+        "communication": {
+          "title": "Direkte Kommunikation",
+          "description": "Kein Corporate-Sprech. Kein Jargon. Wir kommunizieren klar, ehrlich und direkt über Herausforderungen und Lösungen."
+        }
+      }
+    },
+    "approach": {
+      "title": "Unser Ansatz",
+      "subtitle": "Wie wir zuverlässige Engineering-Ergebnisse liefern",
+      "smallTeam": {
+        "title": "Kleines Senior-Team",
+        "paragraphs": {
+          "first": "Wir halten das Team bewusst klein und senior, damit Kommunikation direkt bleibt und technische Entscheidungen nah an der Umsetzung bleiben.",
+          "second": "Das Ergebnis sind praktische Lösungen, die zu Ihrem Kontext passen – statt generischem Prozess-Overhead."
+        },
+        "checks": {
+          "first": "Direkter Zugang zu Senior Engineers",
+          "second": "Kurze Entscheidungswege",
+          "third": "Implementierung auf Ihren Stack zugeschnitten"
+        }
+      },
+      "collaboration": {
+        "title": "Direkte Zusammenarbeit",
+        "paragraphs": {
+          "first": "Wir halten Meetings und Reporting schlank und verbringen die meiste Zeit in der Implementierung.",
+          "second": "Sie arbeiten mit den Engineers, die bauen – mit klaren Updates und weniger Handoffs."
+        },
+        "checks": {
+          "first": "Engineers, die Produktionscode schreiben",
+          "second": "Schlanker Prozess",
+          "third": "Klare Arbeitsvereinbarungen"
+        }
+      }
+    },
+    "cta": {
+      "title": "Bereit, mit uns zu arbeiten?",
+      "description": "Lassen Sie uns besprechen, wie unser Engineering-Ansatz Ihnen helfen kann, bessere Software zu shippen. Kein Sales-Pitch nötig.",
+      "action": "Gespräch starten"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt Lorna Dev | Beratung buchen",
+      "description": "Bereit, Ihre Entwicklungsgeschwindigkeit zu beschleunigen? Buchen Sie eine Beratung, um Ihre Projektbedürfnisse zu besprechen. Wir sind spezialisiert auf Automatisierung, Architektur und produktionsreife Systeme."
+    },
+    "hero": {
+      "titlePrefix": "Lass uns",
+      "titleHighlight": "etwas Großartiges bauen",
+      "description": "Bereit, Ihre Entwicklungsgeschwindigkeit zu beschleunigen? Lassen Sie uns besprechen, wie wir Ihnen helfen können, bessere Software schneller zu shippen."
+    },
+    "sidebar": {
+      "title": "Kontakt aufnehmen",
+      "responseTime": {
+        "title": "Antwortzeit",
+        "description": "Wir antworten in der Regel innerhalb von 24 Stunden an Werktagen. Bei dringenden Anliegen erwähnen Sie es in Ihrer Nachricht."
+      },
+      "expectations": {
+        "title": "Was Sie erwartet",
+        "description": "Wir besprechen Ihre Projektbedürfnisse, Timeline und wie unsere Engineering-Expertise Ihnen helfen kann, Ihre Entwicklungsgeschwindigkeit zu beschleunigen."
+      },
+      "noPressure": {
+        "title": "Kein Druck",
+        "description": "Das ist ein Gespräch, kein Sales-Pitch. Wir sind hier, um Ihre Herausforderungen zu verstehen und zu prüfen, ob wir die richtige Lösung sind."
+      },
+      "directEmail": "Bevorzugen Sie E-Mail? Schreiben Sie direkt an"
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": {
+        "cost": {
+          "question": "Wie viel kostet es?",
+          "answer": "Die Preise hängen von Umfang und Timeline ab. Wir bieten sowohl Festpreisprojekte als auch Retainer-basiertes Consulting. Nach Klärung Ihrer Anforderungen erstellen wir ein detailliertes Angebot."
+        },
+        "remote": {
+          "question": "Arbeiten Sie remote?",
+          "answer": "Ja, wir sind remote-first. Wir können remote mit Ihrem bestehenden Team arbeiten oder on-site zusammenarbeiten – je nach Präferenz und Projektbedarf."
+        },
+        "timeline": {
+          "question": "Wie sieht Ihre typische Timeline aus?",
+          "answer": "Die meisten Projekte starten mit einer 1-2-wöchigen Discovery-Phase, gefolgt von der Implementierung. Oft können wir innerhalb von 1-2 Wochen nach Vereinbarung beginnen."
+        },
+        "support": {
+          "question": "Bieten Sie laufenden Support an?",
+          "answer": "Ja, wir bieten Post-Launch Support und Wartungspakete. Wir sind in Ihren langfristigen Erfolg investiert, nicht nur in den Projektabschluss."
+        }
+      }
+    },
+    "form": {
+      "success": {
+        "title": "Nachricht gesendet!",
+        "description": "Danke für Ihre Nachricht. Wir melden uns innerhalb von 24 Stunden zurück.",
+        "action": "Eine weitere Nachricht senden"
+      },
+      "honeypotLabel": "Dieses Feld leer lassen",
+      "fields": {
+        "name": {
+          "label": "Name *",
+          "placeholder": "Ihr vollständiger Name"
+        },
+        "email": {
+          "label": "E-Mail *",
+          "placeholder": "ihre.email@firma.com"
+        },
+        "company": {
+          "label": "Unternehmen",
+          "placeholder": "Name Ihres Unternehmens"
+        },
+        "projectType": {
+          "label": "Projekttyp"
+        },
+        "budget": {
+          "label": "Budgetrahmen"
+        },
+        "message": {
+          "label": "Nachricht *",
+          "placeholder": "Erzählen Sie uns von Ihrem Projekt, Ihren Herausforderungen und Zielen. Je mehr Details Sie geben, desto besser können wir helfen."
+        }
+      },
+      "projectType": {
+        "placeholder": "Projekttyp auswählen...",
+        "automation": "Automatisierung & Workflows",
+        "architecture": "Systemarchitektur & Refactors",
+        "performance": "Performance- & Kostenoptimierung",
+        "integrations": "API-Integrationen & Datenflüsse",
+        "tools": "Interne Tools & Dashboards",
+        "mvp": "Rapid MVP → Produktion",
+        "other": "Andere / Individuelles Projekt"
+      },
+      "budget": {
+        "placeholder": "Budgetrahmen auswählen...",
+        "under25": "Unter 25.000 $",
+        "range25to50": "25.000 $ - 50.000 $",
+        "range50to100": "50.000 $ - 100.000 $",
+        "range100to250": "100.000 $ - 250.000 $",
+        "above250": "250.000 $+",
+        "discuss": "Lassen Sie uns sprechen"
+      },
+      "validation": {
+        "nameRequired": "Name ist erforderlich",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "messageRequired": "Nachricht ist erforderlich",
+        "messageTooShort": "Bitte geben Sie mehr Details zu Ihrem Projekt an"
+      },
+      "errors": {
+        "sendFailed": "Nachricht konnte nicht gesendet werden",
+        "sendFailedRetry": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+      },
+      "privacyNote": "Wir respektieren Ihre Privatsphäre. Ihre Informationen werden nur zur Beantwortung Ihrer Anfrage verwendet und niemals an Dritte weitergegeben."
+    }
+  },
+  "solutionsPage": {
+    "meta": {
+      "title": "Engineering-Lösungen | Lorna Dev",
+      "description": "Spezialisierte Engineering-Consulting-Services: Automatisierung, Systemarchitektur, Performance-Optimierung, API-Integrationen und produktionsreife Entwicklung."
+    },
+    "hero": {
+      "titlePrefix": "Engineering",
+      "titleHighlight": "Lösungen",
+      "description": "Spezialisierte Consulting-Services, die Ihre Entwicklungsgeschwindigkeit beschleunigen und produktionsreife Systeme liefern."
+    },
+    "labels": {
+      "whoFor": "Für wen",
+      "painPoints": "Gelöste Pain Points",
+      "deliverables": "Deliverables"
+    },
+    "cta": {
+      "title": "Brauchen Sie eine individuelle Lösung?",
+      "description": "Jede Engineering-Herausforderung ist einzigartig. Lassen Sie uns Ihre spezifischen Anforderungen besprechen und eine Lösung entwerfen, die zu Ihren Zielen und Constraints passt.",
+      "action": "Gespräch starten"
+    }
+  },
+  "solutionDetail": {
+    "viewAll": "Alle Lösungen ansehen",
+    "stats": {
+      "timeline": "Typischer Zeitrahmen",
+      "model": "Engagement-Modell"
+    },
+    "sections": {
+      "whoFor": "Wem das hilft",
+      "painPoints": "Adressierte Pain Points",
+      "deliverables": "Typische Deliverables"
+    },
+    "cta": {
+      "title": "Bereit, {action}?",
+      "description": "Lassen Sie uns besprechen, wie diese Lösung Ihre Entwicklungsgeschwindigkeit beschleunigen und bessere Ergebnisse für Ihr Team liefern kann.",
+      "fallbackAction": "loszulegen"
+    }
+  },
+  "workPage": {
+    "meta": {
+      "title": "Arbeit & Fallstudien | Lorna Dev",
+      "description": "Engineering-Fallstudien zu Automatisierung, Performance-Optimierung und Systemarchitektur. Echte Ergebnisse aus Produktionsimplementierungen."
+    },
+    "hero": {
+      "titlePrefix": "Engineering",
+      "titleHighlight": "Fallstudien",
+      "description": "Echte Projekte, messbare Ergebnisse. Sehen Sie, wie wir Teams geholfen haben, bessere Software zu shippen und ihre Entwicklungsgeschwindigkeit zu beschleunigen.",
+      "note": "Ausgewählte Arbeiten verfügbar. Vollständige Fallstudien auf Anfrage."
+    },
+    "featured": {
+      "title": "Ausgewählte Projekte",
+      "description": "Hervorgehobene Fallstudien, die umfassende Engineering-Lösungen demonstrieren"
+    },
+    "all": {
+      "title": "Alle Fallstudien",
+      "description": "Umfassende Projektbeispiele aus unterschiedlichen Branchen und technischen Herausforderungen"
+    },
+    "labels": {
+      "challenge": "Herausforderung",
+      "results": "Ergebnisse",
+      "keyResults": "Kern-Ergebnisse",
+      "more": "+{count} mehr"
+    },
+    "cta": {
+      "title": "Bereit für Ihre Erfolgsgeschichte?",
+      "description": "Lassen Sie uns Ihre Engineering-Herausforderungen besprechen und eine Fallstudie erstellen, die echte Ergebnisse und messbaren Impact zeigt.",
+      "action": "Projekt starten"
+    }
+  },
+  "workDetail": {
+    "labels": {
+      "keyResults": "Kern-Ergebnisse",
+      "constraints": "Constraints",
+      "techStack": "Tech-Stack",
+      "deliverables": "Deliverables",
+      "approach": "Vorgehen"
+    },
+    "cta": {
+      "title": "Bereit für ähnliche Ergebnisse?",
+      "description": "Lassen Sie uns besprechen, wie wir Ihnen helfen können, vergleichbare Ergebnisse für Ihre Engineering-Herausforderungen zu erreichen.",
+      "primary": "Projekt starten",
+      "secondary": "Weitere Fallstudien ansehen"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Datenschutzerklärung | Lorna Dev",
+      "description": "Wie Lorna Dev Ihre personenbezogenen Daten erhebt, nutzt und schützt. Wir respektieren Ihre Privatsphäre und stehen für Transparenz."
+    },
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: 12. Januar 2026",
+    "lead": "Bei Lorna Dev respektieren wir Ihre Privatsphäre und sind verpflichtet, Ihre personenbezogenen Daten zu schützen. Diese Datenschutzerklärung erklärt, wie wir Daten erheben, nutzen und sichern, wenn Sie mit unseren Services interagieren.",
+    "sections": [
+      {
+        "heading": "Informationen, die wir erheben",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Kontaktformular-Einsendungen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wenn Sie unser Kontaktformular absenden, erheben wir:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Name - Um Sie in unserer Kommunikation persönlich anzusprechen",
+              "E-Mail-Adresse - Um auf Ihre Anfrage zu antworten und Projekt-Updates zu senden",
+              "Firmenname (optional) - Um Ihren Business-Kontext zu verstehen",
+              "Projektdetails - Um relevante Consulting-Services anzubieten",
+              "Budgetinformationen (optional) - Um sicherzustellen, dass wir beim Projektumfang aligned sind"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "Technische Informationen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wenn Sie unsere Website besuchen, erheben wir automatisch bestimmte technische Informationen:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "IP-Adresse und Standortdaten (zur Spam-Prävention und für Analytics)",
+              "Browsertyp und -version",
+              "Besuchte Seiten und Verweildauer auf unserer Website",
+              "Informationen zur verweisenden Website"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Wie wir Ihre Informationen verwenden",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir verwenden die erhobenen Informationen für folgende Zwecke:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Kommunikation - Um auf Ihre Anfragen zu antworten und Projekt-Updates bereitzustellen",
+              "Service Delivery - Um Ihre Bedürfnisse zu verstehen und relevante Consulting-Services anzubieten",
+              "Geschäftsbetrieb - Um unsere Kontakt-Datenbank zu verwalten und unsere Services zu verbessern",
+              "Rechtliche Compliance - Um geltende Gesetze und Vorschriften einzuhalten",
+              "Analytics - Um die Nutzung der Website zu verstehen und die User Experience zu verbessern"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Weitergabe und Offenlegung von Informationen",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir verkaufen, tauschen oder übertragen Ihre personenbezogenen Daten nicht an Dritte, außer in folgenden Fällen:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Service Provider - Wir können Informationen mit vertrauenswürdigen Drittanbietern teilen, die uns beim Betrieb unserer Website und unseres Geschäfts unterstützen (z. B. E-Mail-Service-Provider)",
+              "Rechtliche Anforderungen - Wir können Informationen offenlegen, wenn dies gesetzlich erforderlich ist oder um unsere Rechte und Sicherheit zu schützen",
+              "Unternehmensübertragungen - Im Falle einer Fusion, Übernahme oder eines Asset-Sales können Ihre Informationen übertragen werden"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Datensicherheit",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir implementieren angemessene technische und organisatorische Sicherheitsmaßnahmen, um Ihre personenbezogenen Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Dazu gehören:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verschlüsselung sensibler Daten bei Übertragung und Speicherung",
+              "Regelmäßige Security-Audits und Updates",
+              "Begrenzter Zugriff auf personenbezogene Daten nach Need-to-know-Prinzip",
+              "Sichere Datenspeicherung und Backup-Prozesse"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Datenaufbewahrung",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir speichern Ihre personenbezogenen Daten so lange, wie es erforderlich ist, um unsere Services zu erbringen und die in dieser Datenschutzerklärung beschriebenen Zwecke zu erfüllen, sofern nicht gesetzlich eine längere Aufbewahrungsfrist vorgeschrieben ist. Einsendungen über das Kontaktformular werden in der Regel 3 Jahre lang für geschäftliche und rechtliche Zwecke aufbewahrt."
+          }
+        ]
+      },
+      {
+        "heading": "Ihre Rechte",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Abhängig von Ihrem Standort haben Sie möglicherweise folgende Rechte in Bezug auf Ihre personenbezogenen Daten:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Zugriff - Fordern Sie eine Kopie der personenbezogenen Daten an, die wir über Sie speichern",
+              "Berichtigung - Fordern Sie die Korrektur unrichtiger oder unvollständiger Informationen an",
+              "Löschung - Fordern Sie die Löschung Ihrer personenbezogenen Daten an",
+              "Portabilität - Fordern Sie die Übertragung Ihrer Daten an einen anderen Service an",
+              "Widerspruch - Widersprechen Sie der Verarbeitung Ihrer personenbezogenen Daten"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Um diese Rechte auszuüben, kontaktieren Sie uns bitte unter der unten angegebenen E-Mail-Adresse."
+          }
+        ]
+      },
+      {
+        "heading": "Cookies und Analytics",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir verwenden Cookies und ähnliche Technologien, um Ihre Erfahrung auf unserer Website zu verbessern und Nutzungsmuster zu analysieren. Wir verwenden:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plausible Analytics - Privacy-fokussierte Analytics, die keine Cookies verwenden oder personenbezogene Daten tracken",
+              "Google Analytics 4 (optional) - Für detaillierte Website-Analytics und Conversion-Tracking"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Drittanbieter-Services",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Unsere Website kann Links zu Drittanbieter-Websites enthalten. Wir sind nicht verantwortlich für die Datenschutzpraktiken dieser externen Websites. Wir empfehlen, die Datenschutzerklärungen aller Drittanbieter-Websites zu prüfen, die Sie besuchen."
+          }
+        ]
+      },
+      {
+        "heading": "Datenschutz von Kindern",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Unsere Services sind nicht für Kinder unter 13 Jahren bestimmt. Wir erheben nicht wissentlich personenbezogene Daten von Kindern unter 13. Wenn wir feststellen, dass wir personenbezogene Daten eines Kindes unter 13 erhoben haben, werden wir Schritte unternehmen, diese Daten zu löschen."
+          }
+        ]
+      },
+      {
+        "heading": "Änderungen dieser Datenschutzerklärung",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir informieren über Änderungen, indem wir die neue Datenschutzerklärung auf dieser Seite veröffentlichen und das Datum \"Zuletzt aktualisiert\" anpassen. Wir empfehlen, diese Datenschutzerklärung regelmäßig zu überprüfen."
+          }
+        ]
+      },
+      {
+        "heading": "Kontakt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wenn Sie Fragen zu dieser Datenschutzerklärung oder zu unseren Datenpraktiken haben, kontaktieren Sie uns bitte:"
+          }
+        ]
+      }
+    ],
+    "contactCard": {
+      "emailLabel": "E-Mail:",
+      "email": "hello@lornadev.com",
+      "responseTimeLabel": "Antwortzeit:",
+      "responseTime": "Wir antworten in der Regel innerhalb von 24-48 Stunden"
+    },
+    "disclaimer": {
+      "heading": "Haftungsausschluss",
+      "title": "Wichtig:",
+      "text": "Diese Datenschutzerklärung dient nur zu Informationszwecken und stellt keine Rechtsberatung dar. Lorna Dev bietet Engineering-Consulting-Services an, ist jedoch keine Kanzlei. Für Rechtsberatung zu Datenschutz und Datensicherheit wenden Sie sich bitte an qualifizierte Rechtsfachleute."
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Nutzungsbedingungen | Lorna Dev",
+      "description": "Bedingungen für Lorna Dev Engineering-Consulting-Services. Klare Erwartungen für Projekt-Engagement und Deliverables."
+    },
+    "title": "Nutzungsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: 12. Januar 2026",
+    "lead": "Diese Nutzungsbedingungen (\"Terms\") regeln Ihre Nutzung der Engineering-Consulting-Services und Website von Lorna Dev. Durch die Beauftragung unserer Services oder die Nutzung unserer Website stimmen Sie diesen Bedingungen zu.",
+    "sections": [
+      {
+        "heading": "Überblick über die Services",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Lorna Dev bietet Engineering-Consulting-Services an, einschließlich, aber nicht beschränkt auf:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Softwareentwicklung und Architekturberatung",
+              "Systemautomatisierung und Workflow-Optimierung",
+              "Performance-Optimierung und Kostenreduktion",
+              "API-Integration und Design von Datenflüssen",
+              "Entwicklung interner Tools und Dashboards",
+              "Code-Reviews und technische Guidance"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Projekt-Engagement",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Projektangebote und Vereinbarungen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Alle Projekte beginnen mit einer Discovery-Phase, um Ihre Anforderungen, Constraints und Ziele zu verstehen. Wir liefern einen detaillierten Projektvorschlag, der Folgendes umfasst:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Scope of Work und Deliverables",
+              "Timeline und Meilensteine",
+              "Geschätzte Kosten und Zahlungsbedingungen",
+              "Erfolgskriterien und Abnahmeprozess"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Projekte starten erst nach gegenseitiger Einigung über Scope, Timeline und Vergütung."
+          },
+          {
+            "type": "subheading",
+            "text": "Kommunikation und Zusammenarbeit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wir halten während des Projekts eine regelmäßige Kommunikation aufrecht:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Wöchentliche Fortschrittsupdates und Statusberichte",
+              "Direkter Zugang zum Engineering-Team",
+              "Regelmäßige Check-ins und Meilenstein-Reviews",
+              "Unmittelbare Benachrichtigung bei Issues oder Blockern"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Zahlungsbedingungen",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Zahlungsstruktur"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wir bieten flexible Zahlungsstrukturen je nach Projekttyp:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Festpreisprojekte: Vereinbarte Gesamtkosten mit fortschrittsbasierten Meilensteinen",
+              "Retainer-Services: Monatliche wiederkehrende Zahlungen für laufenden Support",
+              "Advisory-Services: Stundensätze oder Tagessätze für Beratung"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "Zahlungsplan"
+          },
+          {
+            "type": "list",
+            "items": [
+              "50% Vorauszahlung zum Start",
+              "25% nach Abschluss wichtiger Meilensteine",
+              "25% bei finaler Lieferung und Abnahme",
+              "Net 30 Zahlungsbedingungen für Retainer-Kunden"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "Verspätete Zahlungen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zahlungen, die nicht bis zum Fälligkeitsdatum eingehen, können zu Folgendem führen:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Aussetzung der Arbeit bis zum Zahlungseingang",
+              "Zusätzliche Kosten durch verzögerte Projekt-Timelines",
+              "Zinsbelastung auf überfällige Beträge (1,5% pro Monat)"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Projektlieferung und Abnahme",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Deliverables"
+          },
+          {
+            "type": "paragraph",
+            "text": "Alle Deliverables umfassen:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Produktionsreifer Code gemäß Best Practices der Branche",
+              "Umfassende Dokumentation und Runbooks",
+              "Automatisierte Tests und Deployment-Pipelines",
+              "Monitoring- und Alerting-Setup",
+              "Knowledge Transfer und Team-Training"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "Abnahmeprozess"
+          },
+          {
+            "type": "paragraph",
+            "text": "Die Projektabnahme erfordert:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Erfolgreiches Deployment in die Staging-Umgebung",
+              "Abschluss der vereinbarten Testfälle",
+              "Dokumentations-Review und Freigabe",
+              "Kunden-Sign-off für alle Deliverables"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Scope-Änderungen und zusätzliche Arbeit",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Änderungen am Projekt-Scope können Timeline und Kosten beeinflussen. Für Scope-Änderungen folgen wir diesem Prozess:"
+          },
+          {
+            "type": "ordered",
+            "items": [
+              "Schriftliche Anfrage für Scope-Änderung",
+              "Impact-Assessment (Zeit, Kosten, Risiko)",
+              "Gegenseitige Einigung über Änderungen",
+              "Aktualisierter Projektplan und Timeline",
+              "Formaler Vertragsnachtrag, falls erforderlich"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Zusätzliche Arbeit, die während des Projekts entdeckt wird, wird dokumentiert und kann eine separate Vereinbarung erfordern."
+          }
+        ]
+      },
+      {
+        "heading": "Geistiges Eigentum",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Kundenarbeit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Alle für Kunden erbrachten Arbeiten bleiben geistiges Eigentum des Kunden. Wir behalten keine Rechte an kundenspezifischem Code, Designs oder Lösungen."
+          },
+          {
+            "type": "subheading",
+            "text": "Unsere Tools und Methoden"
+          },
+          {
+            "type": "paragraph",
+            "text": "Lorna Dev behält das Eigentum an:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Internen Tools und Frameworks, die von unserem Team entwickelt wurden",
+              "Consulting-Methodologien und Prozessen",
+              "Wiederverwendbaren Code-Libraries und Komponenten",
+              "Dokumentations-Templates und Best Practices"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Vertraulichkeit",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Beide Parteien verpflichten sich zur Vertraulichkeit von:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Proprietären Business-Informationen",
+              "Technischen Implementierungen und Architekturen",
+              "Kundendaten und Systemen",
+              "Projektdetails und Pricing"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Vertraulichkeitsverpflichtungen gelten über die Beendigung unserer Vereinbarung hinaus."
+          }
+        ]
+      },
+      {
+        "heading": "Haftung und Gewährleistungen",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Service-Gewährleistung"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wir gewährleisten, dass unsere Services professionell und gemäß Branchenstandards erbracht werden. Allerdings:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Wir garantieren keine spezifischen Business-Outcomes oder Ergebnisse",
+              "System-Performance hängt von vielen Faktoren außerhalb unserer Kontrolle ab",
+              "Drittanbieter-Services und Integrationen sind nicht von unserer Gewährleistung abgedeckt"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "Haftungsbeschränkung"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unsere Gesamthaftung für jeglichen Anspruch aus unseren Services ist auf den Betrag begrenzt, der für diese spezifischen Services in den letzten 12 Monaten gezahlt wurde."
+          },
+          {
+            "type": "paragraph",
+            "text": "Wir haften nicht für:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Indirekte, zufällige oder Folgeschäden",
+              "Verlust von Gewinnen, Daten oder Business-Opportunities",
+              "Ansprüche oder Streitigkeiten Dritter",
+              "Probleme, die durch vom Kunden bereitgestellte Informationen oder Anforderungen verursacht werden"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Kündigung",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Jede Partei kann die Vereinbarung mit 30 Tagen schriftlicher Kündigungsfrist beenden. Bei Kündigung:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Alle offenen Zahlungen werden sofort fällig",
+              "Arbeiten in Bearbeitung werden abgeschlossen oder entsprechend dem Fertigstellungsgrad vergütet",
+              "Alle Kundenmaterialien werden wie gewünscht zurückgegeben oder vernichtet",
+              "Vertraulichkeitsverpflichtungen bleiben in Kraft"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Streitbeilegung",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir bevorzugen eine gütliche Beilegung von Streitigkeiten durch direkte Kommunikation. Wenn keine Lösung erreicht werden kann:"
+          },
+          {
+            "type": "ordered",
+            "items": [
+              "Nicht bindende Mediation mit einer neutralen dritten Partei",
+              "Bindende Schiedsgerichtsbarkeit gemäß lokalen Gesetzen",
+              "Rechtsweg vor den Gerichten der Jurisdiktion des Kunden"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Höhere Gewalt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Keine Partei haftet für Verzögerungen oder Ausfälle durch Ereignisse außerhalb angemessener Kontrolle, einschließlich:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Naturkatastrophen oder höhere Gewalt",
+              "Krieg, Terrorismus oder zivile Unruhen",
+              "Staatliche Beschränkungen oder Regulierungen",
+              "Internet- oder Kommunikationsausfälle",
+              "Pandemien oder Gesundheitsnotfälle"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Anwendbares Recht",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Diese Terms unterliegen den Gesetzen der Jurisdiktion, in der der Kunde ansässig ist, ohne Berücksichtigung kollisionsrechtlicher Grundsätze."
+          }
+        ]
+      },
+      {
+        "heading": "Änderungen der Terms",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Wir können diese Terms von Zeit zu Zeit aktualisieren. Änderungen werden per E-Mail kommuniziert oder auf unserer Website veröffentlicht – mit einer 30-tägigen Ankündigungsfrist für bestehende Kunden."
+          }
+        ]
+      },
+      {
+        "heading": "Kontaktinformationen",
+        "blocks": []
+      }
+    ],
+    "contactCard": {
+      "emailLabel": "E-Mail:",
+      "email": "hello@lornadev.com",
+      "responseTimeLabel": "Antwortzeit:",
+      "responseTime": "Wir antworten in der Regel innerhalb von 24-48 Stunden"
+    },
+    "acceptance": {
+      "heading": "Akzeptanz",
+      "title": "Wichtig:",
+      "text": "Durch die Beauftragung der Services von Lorna Dev bestätigen Sie, dass Sie diese Nutzungsbedingungen gelesen, verstanden und akzeptiert haben. Diese Terms stellen die gesamte Vereinbarung zwischen den Parteien dar und ersetzen alle vorherigen Vereinbarungen oder Absprachen."
+    }
+  },
+  "api": {
+    "contact": {
+      "errors": {
+        "nameRequired": "Name ist erforderlich",
+        "emailRequired": "E-Mail ist erforderlich",
+        "invalidEmail": "Ungültige E-Mail-Adresse",
+        "messageRequired": "Nachricht ist erforderlich",
+        "internal": "Interner Serverfehler. Bitte versuchen Sie es später erneut.",
+        "unauthorized": "Nicht autorisiert",
+        "fetchFailed": "Einsendungen konnten nicht abgerufen werden"
+      },
+      "success": {
+        "messageSent": "Nachricht erfolgreich gesendet"
+      },
+      "email": {
+        "subject": "Neue Kontaktformular-Einsendung von {name}",
+        "title": "Neue Kontaktformular-Einsendung",
+        "detailsTitle": "Kontaktdaten",
+        "messageTitle": "Nachricht",
+        "submissionId": "Einsendungs-ID:",
+        "submitted": "Eingereicht:",
+        "ipAddress": "IP-Adresse:",
+        "reply": "Antwort an {name}",
+        "fields": {
+          "name": "Name:",
+          "email": "E-Mail:",
+          "company": "Unternehmen:",
+          "projectType": "Projekttyp:",
+          "budgetRange": "Budgetrahmen:"
+        }
+      }
+    }
+  },
+  "content": {
+    "solutions": {
+      "automation": {
+        "title": "Automatisierung & Workflow-Systeme",
+        "description": "Reduzieren Sie manuelle Tätigkeiten um 80% mit intelligenten Automatisierungssystemen, CI/CD-Pipelines und Workflow-Optimierung.",
+        "whoFor": "Engineering-Teams, die mit manuellen Prozessen, Deployment-Engpässen oder repetitiven Aufgaben kämpfen, die die Entwicklungsgeschwindigkeit verlangsamen.",
+        "painPoints": {
+          "manualDeployments": "Manuelle Deployment-Prozesse dauern Stunden",
+          "repetitiveTesting": "Repetitive Tests und Qualitätschecks",
+          "environmentDrift": "Inkonsistente Entwicklungsumgebungen",
+          "delayedFeedback": "Verzögerte Feedback-Loops",
+          "humanError": "Menschliche Fehler bei operativen Aufgaben"
+        },
+        "deliverables": {
+          "pipelines": "Automatisierte CI/CD-Pipelines",
+          "iac": "Infrastructure as Code (IaC) Setup",
+          "tests": "Automatisierte Test-Suites",
+          "monitoring": "Monitoring- und Alerting-Systeme",
+          "docs": "Dokumentation und Runbooks"
+        },
+        "timeline": "2-6 Wochen",
+        "ctaText": "Workflows automatisieren"
+      },
+      "architecture": {
+        "title": "Systemarchitektur & Refactors",
+        "description": "Modernisieren Sie Legacy-Systeme, entwerfen Sie skalierbare Architekturen und refaktorisieren Sie für Wartbarkeit und Performance.",
+        "whoFor": "Teams mit alternden Systemen, Performance-Engpässen oder Architekturen, die nicht mit dem Business-Wachstum skalieren können.",
+        "painPoints": {
+          "legacy": "Legacy-Systeme, die schwer zu warten sind",
+          "performance": "Performance-Engpässe unter Last",
+          "inflexible": "Unflexible Architekturen für neue Features",
+          "debt": "Technische Schulden verlangsamen die Entwicklung",
+          "scalability": "Skalierbarkeits-Limitierungen"
+        },
+        "deliverables": {
+          "documentation": "Architektur-Dokumentation und Diagramme",
+          "refactor": "Refaktorisierte Codebase mit verbesserter Struktur",
+          "optimization": "Performance-Optimierungen",
+          "scaling": "Skalierbarkeits-Verbesserungen",
+          "migration": "Migrationspläne und Umsetzung"
+        },
+        "timeline": "4-12 Wochen",
+        "ctaText": "Architektur modernisieren"
+      },
+      "performance": {
+        "title": "Performance- & Kostenoptimierung",
+        "description": "Reduzieren Sie Infrastrukturkosten um 40% und verbessern Sie gleichzeitig Antwortzeiten und Systemzuverlässigkeit.",
+        "whoFor": "Teams mit hohen Infrastrukturkosten, langsamer Performance oder ineffizienter Ressourcennutzung.",
+        "painPoints": {
+          "cost": "Hohe Cloud-Infrastrukturkosten",
+          "latency": "Langsame Antwortzeiten der Anwendung",
+          "inefficiency": "Ineffiziente Ressourcennutzung",
+          "degradation": "Performance-Degradation unter Last",
+          "ux": "Schlechte User Experience"
+        },
+        "deliverables": {
+          "audit": "Performance-Audit und Empfehlungen",
+          "infra": "Optimierung der Infrastrukturkosten",
+          "app": "Verbesserungen der Application-Performance",
+          "monitoring": "Monitoring- und Alerting-Setup",
+          "docs": "Optimierungsdokumentation"
+        },
+        "timeline": "2-8 Wochen",
+        "ctaText": "Performance & Kosten optimieren"
+      }
+    },
+    "work": {
+      "cicd": {
+        "title": "Modernisierung der CI/CD-Pipeline",
+        "client": "FinTech-Startup",
+        "problem": "Manuelle Deployment-Prozesse dauerten 4+ Stunden, häufige Rollback-Incidents, inkonsistente Umgebungen über Entwicklungsstufen hinweg.",
+        "constraints": {
+          "devops": "Begrenzte DevOps-Ressourcen",
+          "legacy": "Legacy-Monolith-Anwendung",
+          "cloud": "Mehrere Cloud-Provider im Einsatz",
+          "compliance": "Regulatorische Compliance-Anforderungen"
+        },
+        "approach": "GitHub Actions für vollständige CI/CD-Automatisierung implementiert, Anwendung mit Docker containerisiert und Infrastructure as Code mit Terraform aufgesetzt. Umfassende Test-Suites erstellt und automatisiertes Security-Scanning integriert.",
+        "deliverables": {
+          "pipeline": "Vollständige CI/CD-Pipeline",
+          "docker": "Docker-Containerisierung",
+          "iac": "Infrastructure as Code Setup",
+          "testing": "Automatisierte Test-Suite",
+          "security": "Integration von Security-Scanning",
+          "documentation": "Deployment-Dokumentation"
+        },
+        "results": {
+          "speed": "90% Reduktion der Deployment-Zeit",
+          "stability": "Keine Deployment-Fehler in 6 Monaten",
+          "consistency": "Konsistente Umgebungen über alle Stages hinweg",
+          "compliance": "Automatisiertes Compliance-Reporting",
+          "productivity": "Verbesserte Developer-Produktivität"
+        },
+        "stack": [
+          "GitHub Actions",
+          "Docker",
+          "Terraform",
+          "AWS",
+          "Jest",
+          "Cypress",
+          "SonarQube"
+        ],
+        "timeline": "8 Wochen"
+      },
+      "apiPerformance": {
+        "title": "API-Performance-Optimierung",
+        "client": "E-Commerce-Plattform",
+        "problem": "REST-API-Antwortzeiten verschlechterten sich unter Last von 200ms auf 2+ Sekunden, was zu Checkout-Fehlern und Kundenabwanderung führte.",
+        "constraints": {
+          "contracts": "Bestehende API-Contracts dürfen nicht geändert werden",
+          "schema": "Datenbankschema ist wegen Drittanbieter-Integrationen gesperrt",
+          "uptime": "24/7 Uptime-Anforderung",
+          "maintenance": "Begrenzte Wartungsfenster"
+        },
+        "approach": "Umfassenden Performance-Audit durchgeführt, Multi-Layer-Caching-Strategie implementiert, Datenbankabfragen optimiert und horizontale Skalierung ermöglicht, ohne bestehende Contracts zu brechen.",
+        "deliverables": {
+          "audit": "Performance-Audit-Report",
+          "caching": "Multi-Layer-Caching-Implementierung",
+          "query": "Optimierung der Datenbankabfragen",
+          "load": "Load-Balancing-Setup",
+          "dashboard": "Monitoring-Dashboard",
+          "testing": "Performance-Testing-Suite"
+        },
+        "results": {
+          "latency": "85% Verbesserung der API-Antwortzeiten",
+          "db": "60% Reduktion der Datenbanklast",
+          "uptime": "99,9% Uptime beibehalten",
+          "cost": "50% Kostenreduktion der Infrastruktur",
+          "ux": "Verbesserte Customer Experience"
+        },
+        "stack": [
+          "Node.js",
+          "PostgreSQL",
+          "Redis",
+          "AWS ELB",
+          "DataDog",
+          "k6"
+        ],
+        "timeline": "6 Wochen"
+      }
+    }
+  }
+}

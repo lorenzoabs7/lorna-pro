@@ -7,8 +7,9 @@
   },
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/generate-favicon.mjs && astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/generate-favicon.mjs",
     "build": "astro check && astro build && node scripts/vercel-runtime-fix.mjs",
     "preview": "astro preview",
     "astro": "astro",

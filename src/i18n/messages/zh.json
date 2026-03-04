@@ -1,1 +1,1411 @@
-{}
+{
+  "common": {
+    "brandName": "Lorna Dev",
+    "actions": {
+      "learnMore": "了解更多",
+      "getInTouch": "联系我们",
+      "bookConsultation": "预约咨询",
+      "viewSolutions": "查看解决方案",
+      "viewAllSolutions": "查看所有解决方案",
+      "exploreSolutions": "探索解决方案",
+      "startProject": "启动您的项目",
+      "startConversation": "开始对话",
+      "readCaseStudy": "阅读案例研究",
+      "viewCaseStudyDetails": "详情",
+      "viewAllCaseStudies": "查看所有案例研究",
+      "sendMessage": "发送消息",
+      "sendAnotherMessage": "再发一条消息",
+      "sending": "发送中...",
+      "discussProject": "讨论类似项目"
+    },
+    "labels": {
+      "timeline": "周期",
+      "model": "模式",
+      "challenge": "挑战",
+      "result": "结果",
+      "before": "之前",
+      "after": "之后",
+      "client": "客户",
+      "caseStudy": "案例研究",
+      "featuredProjects": "精选项目",
+      "allCaseStudies": "所有案例研究",
+      "productionReady": "生产环境",
+      "readyCode": "可直接使用的代码"
+    },
+    "engagementModel": {
+      "fixed": "固定范围",
+      "retainer": "按月顾问",
+      "advisory": "咨询顾问"
+    },
+    "language": {
+      "selectorAriaLabel": "选择语言",
+      "selectorTitle": "选择语言",
+      "optionsAriaLabel": "可用语言",
+      "names": {
+        "en": "English",
+        "es": "Español",
+        "it": "Italiano",
+        "de": "Deutsch",
+        "ru": "Русский",
+        "zh": "中文"
+      }
+    }
+  },
+  "theme": {
+    "toggle": "切换深色模式"
+  },
+  "navigation": {
+    "ariaLabel": "主导航",
+    "links": {
+      "home": "首页",
+      "solutions": "解决方案",
+      "store": "商店",
+      "about": "关于"
+    },
+    "mobileMenu": {
+      "open": "打开主菜单"
+    },
+    "cta": "联系我们"
+  },
+  "footer": {
+    "description": "以交付为核心的工程咨询。我们构建可用于生产的系统，自动化工作流，并加速您的开发效率。",
+    "email": "hello@lornadev.com",
+    "location": "远程优先，全球交付",
+    "sections": {
+      "services": "服务",
+      "company": "公司"
+    },
+    "services": {
+      "automation": "自动化与工作流",
+      "architecture": "系统架构",
+      "performance": "性能优化",
+      "integrations": "API 集成"
+    },
+    "company": {
+      "store": "商店",
+      "about": "关于",
+      "insights": "洞察"
+    },
+    "copyright": "© {year} Lorna Dev。保留所有权利。",
+    "links": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Lorna Dev | 面向可用于生产系统的工程咨询",
+      "description": "我们交付可用于生产的软件系统，自动化工作流，并加速开发效率。以结果为导向的工程咨询，不玩概念。"
+    },
+    "hero": {
+      "titlePrefix": "船舶",
+      "titleHighlight": "工程",
+      "description": "我们构建可用于生产的系统，自动化工作流，并加速您的开发效率。不玩概念。只做可靠工程，交付真实结果。",
+      "ctaPrimary": "预约咨询",
+      "ctaSecondary": "查看解决方案",
+      "checks": {
+        "first": "可用于生产的代码",
+        "second": "远程优先交付",
+        "third": "快速实现价值"
+      }
+    },
+    "proof": {
+      "title": "我们交付什么",
+      "description": "聚焦生产可靠性与业务影响的工程服务",
+      "cards": {
+        "delivery": {
+          "title": "快速、可靠交付",
+          "description": "我们交付可用于生产的代码，包含全面测试、文档与部署流水线。"
+        },
+        "reliability": {
+          "title": "生产可靠性",
+          "description": "为规模化而设计的系统，内置监控、错误处理与自动恢复。"
+        },
+        "scaling": {
+          "title": "高性价比扩展",
+          "description": "在保持性能与可靠性标准的同时，优化基础设施成本。"
+        }
+      }
+    },
+    "solutionsTeaser": {
+      "title": "工程解决方案",
+      "description": "为需要可靠系统、自动化工作流与加速交付的团队提供的专业服务",
+      "cards": {
+        "automation": {
+          "title": "自动化与工作流",
+          "description": "通过智能自动化系统、CI/CD 流水线与工作流优化，将手动操作减少 80%。",
+          "link": "了解更多"
+        },
+        "architecture": {
+          "title": "系统架构与重构",
+          "description": "现代化遗留系统，设计可扩展架构，并为可维护性与性能进行重构。",
+          "link": "了解更多"
+        },
+        "performance": {
+          "title": "性能与成本优化",
+          "description": "在提升响应速度与系统可靠性的同时，将基础设施成本降低 40%。",
+          "link": "了解更多"
+        },
+        "integrations": {
+          "title": "API 集成与数据流",
+          "description": "通过稳健的 API 集成、数据管道与支付处理，实现系统无缝连接。",
+          "link": "了解更多"
+        },
+        "tools": {
+          "title": "内部工具与仪表板",
+          "description": "为您的特定工作流构建定制管理后台、分析仪表板与效率工具。",
+          "link": "了解更多"
+        },
+        "mvp": {
+          "title": "快速 MVP → 生产",
+          "description": "数周内上线 MVP，然后以企业级可靠性与监控扩展到生产环境。",
+          "link": "了解更多"
+        }
+      },
+      "cta": "查看所有解决方案"
+    },
+    "onlineBusiness": {
+      "eyebrow": "在线业务",
+      "title": "我们提供解决方案并在线销售产品",
+      "description": "Lorna Dev 作为远程优先的在线业务运营，专注于交付工程服务与自研数字产品。",
+      "statement": "我们的线上业务包括咨询合作、产品化技术服务，以及由团队创建的数字资产直销。",
+      "cards": {
+        "products": {
+          "title": "我们创建的数字产品",
+          "description": "我们开发并销售实用的数字产品，如自动化模板、技术资产与内部工具包。"
+        },
+        "solutions": {
+          "title": "为客户定制解决方案",
+          "description": "我们为架构、集成与自动化项目提供实施服务，按业务需求量身定制。"
+        },
+        "fulfillment": {
+          "title": "在线交付与支持",
+          "description": "项目与产品在线交付，包含文档、上手支持与后续技术协助。"
+        }
+      },
+      "checks": {
+        "first": "远程优先服务交付",
+        "second": "数字产品销售",
+        "third": "持续客户支持"
+      },
+      "ctaPrimary": "探索解决方案",
+      "ctaSecondary": "联系购买产品与服务"
+    },
+    "process": {
+      "title": "我们如何合作",
+      "description": "用于交付可用于生产工程解决方案的成熟流程",
+      "steps": {
+        "discovery": {
+          "title": "调研与规划",
+          "description": "我们分析您当前的系统，识别痛点，并设计包含明确交付物与时间线的技术路线图。",
+          "duration": "1-2 周"
+        },
+        "architecture": {
+          "title": "架构与设计",
+          "description": "与您的团队一起制定详细技术规格、系统架构与实施计划，确保对齐。",
+          "duration": "1-3 周"
+        },
+        "implementation": {
+          "title": "实施与交付",
+          "description": "构建、测试并部署可用于生产的代码，配套全面文档、监控与部署流水线。",
+          "duration": "2-12 周"
+        },
+        "support": {
+          "title": "支持与优化",
+          "description": "提供上线后支持、性能监控与持续优化，确保长期成功。",
+          "duration": "持续进行"
+        }
+      },
+      "ctaLead": "准备加速您的工程交付效率了吗？",
+      "cta": "启动您的项目"
+    },
+    "outcomes": {
+      "title": "项目成果",
+      "description": "围绕交付、可靠性与运维的聚焦工作带来的常见改进",
+      "items": {
+        "release": {
+          "label": "发布流程",
+          "description": "从手动发布转为可重复的部署工作流，配套测试与检查"
+        },
+        "reliability": {
+          "label": "可靠性",
+          "description": "更好的监控、告警与回滚路径，降低宕机风险"
+        },
+        "throughput": {
+          "label": "团队吞吐量",
+          "description": "通过更清晰的工程工作流减少交接问题与返工"
+        },
+        "cost": {
+          "label": "运营成本",
+          "description": "更清洁的基础设施与自动化，减少可避免的开销"
+        }
+      },
+      "example": {
+        "title": "合作示例",
+        "description": "某产品团队将多小时的手动发布迁移为具备回滚支持的自动化流水线，降低发布摩擦并减轻团队运维压力。",
+        "before": "手动清单，不可预测的发布窗口",
+        "after": "自动化发布，事故期间更清晰的职责归属"
+      },
+      "status": {
+        "architecture": "已改进",
+        "cicd": "已自动化",
+        "monitoring": "已建立",
+        "documentation": "已结构化"
+      },
+      "statusLabels": {
+        "architecture": "系统架构",
+        "cicd": "CI/CD 流水线",
+        "monitoring": "监控",
+        "documentation": "文档"
+      }
+    },
+    "faq": {
+      "title": "常见问题",
+      "description": "关于我们工程咨询流程的常见问题",
+      "items": {
+        "quality": {
+          "question": "你们如何确保代码质量和生产可用性？",
+          "answer": "每个项目都包含全面测试（单元、集成、e2e）、代码审查、文档、部署流水线与监控配置。我们遵循行业最佳实践，交付可用于生产、且您的团队可维护与扩展的代码。"
+        },
+        "engagement": {
+          "question": "你们典型的合作模式是什么？",
+          "answer": "我们提供灵活的合作模式：面向特定交付物的固定范围项目、按月顾问形式的持续支持，或用于架构评审的咨询顾问服务。每个项目都从明确范围、周期与交付物协议开始。"
+        },
+        "team": {
+          "question": "你们会和我们现有团队一起工作吗？",
+          "answer": "当然。我们与您的开发团队紧密协作，进行知识转移、代码审查与文档交付。我们的目标是增强您团队的能力，而不是替代他们。我们可按您的偏好远程或驻场合作。"
+        },
+        "stack": {
+          "question": "你们擅长哪些技术？",
+          "answer": "我们使用现代 Web 技术、云平台（AWS、GCP、Azure）、容器化（Docker、Kubernetes），并可适配您的技术栈。我们专注于交付可靠方案，而不是推销特定技术。如果您有偏好栈，我们会在其范围内工作。"
+        },
+        "timeline": {
+          "question": "项目通常需要多久？",
+          "answer": "项目周期取决于范围与复杂度。典型自动化项目可能需要 2-4 周，而完整系统重构可能需要 6-12 周。我们会在规划阶段提供详细时间线，并通过每周进度报告持续同步。"
+        },
+        "scope": {
+          "question": "如果项目需要变更范围怎么办？",
+          "answer": "我们理解需求可能演进。我们采用清晰的变更管理流程，并定期复盘确保在构建您需要的内容。任何范围变更都会在实施前记录并达成一致。"
+        }
+      },
+      "ctaLead": "还有其他问题？欢迎联系我们。",
+      "cta": "联系我们"
+    },
+    "workTeaser": {
+      "title": "近期工作",
+      "description": "交付可衡量业务影响的工程项目",
+      "cards": {
+        "cicd": {
+          "category": "自动化与工作流",
+          "title": "CI/CD 流水线现代化",
+          "description": "将手动部署流程替换为自动化流水线，将发布时间从 4 小时缩短到 20 分钟。",
+          "challenge": "手动部署导致延迟与错误",
+          "result": "发布速度提升 90%，零部署失败",
+          "stack": [
+            "GitHub Actions",
+            "Docker",
+            "Kubernetes"
+          ]
+        },
+        "api": {
+          "category": "系统架构",
+          "title": "API 性能优化",
+          "description": "优化 REST API 端点与数据库查询，将响应时间提升 60%，并降低服务器成本。",
+          "challenge": "高负载下 API 响应缓慢",
+          "result": "响应速度提升 60%，成本节省 30%",
+          "stack": [
+            "Node.js",
+            "PostgreSQL",
+            "Redis"
+          ]
+        },
+        "integration": {
+          "category": "集成与自动化",
+          "title": "第三方系统集成",
+          "description": "将遗留 CRM 与现代支付处理器与库存系统打通，实现订单履约自动化。",
+          "challenge": "系统间手动数据同步",
+          "result": "手动处理时间减少 95%",
+          "stack": [
+            "Stripe API",
+            "Zapier",
+            "Webhooks"
+          ]
+        }
+      },
+      "lead": "可按需提供精选案例。所有项目均包含详细案例研究。",
+      "cta": "查看所有案例研究"
+    },
+    "finalCta": {
+      "title": "准备交付更好的软件了吗？",
+      "description": "聊聊您的工程挑战，以及我们如何帮助您更快、更可靠地交付可用于生产的系统。",
+      "primary": "预约咨询",
+      "secondary": "探索解决方案",
+      "checks": {
+        "first": "无长期合同",
+        "second": "透明定价",
+        "third": "远程友好"
+      }
+    }
+  },
+  "storePage": {
+    "meta": {
+      "title": "商店 | Lorna Dev 数字产品",
+      "description": "浏览 Lorna Dev 的线上店铺与数字产品/技术资产。这里提供 Etsy 与 Gumroad 链接，未来将上线站内商店。"
+    },
+    "hero": {
+      "title": "店铺入口",
+      "highlight": "与产品链接",
+      "description": "这是我们的官方商店入口。使用下方链接访问我们的产品店铺与数字商品。"
+    },
+    "verification": {
+      "title": "业务验证",
+      "description": "Lorna Dev 作为在线业务运营，提供工程解决方案，并通过线上店铺销售数字产品。"
+    },
+    "comingSoon": "即将上线",
+    "links": {
+      "etsy": {
+        "label": "Etsy",
+        "description": "精选数字产品与模板的市场店铺。",
+        "cta": "打开 Etsy",
+        "url": "https://lornacreativeco.etsy.com"
+      },
+      "gumroad": {
+        "label": "Gumroad",
+        "description": "数字产品直购、下载与更新。",
+        "cta": "打开 Gumroad",
+        "url": "https://gumroad.com"
+      },
+      "internal": {
+        "label": "Lorna 商店",
+        "description": "未来的站内商店，可在本网站直接购买产品。",
+        "cta": "站内商店路线图",
+        "url": "/store#internal-store"
+      }
+    },
+    "future": {
+      "title": "站内商店路线图",
+      "description": "我们正在准备原生站内结账流程，用于未来的产品发布。"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "关于 Lorna Dev | 面向可用于生产系统的工程咨询",
+      "description": "我们是专注交付的工程顾问团队。从第一天起就致力于构建可用于生产的系统、自动化工作流，并加速开发效率。"
+    },
+    "hero": {
+      "titlePrefix": "船舶",
+      "titleHighlight": "工程",
+      "description": "我们构建可用于生产的系统，自动化工作流，并加速您的开发效率。不玩概念。只做可靠工程，稳定交付。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "subtitle": "源自实战工程经验",
+      "lead": "Lorna Dev 起步于一个常见问题：写出代码是一回事，让它稳定运行是另一回事。",
+      "paragraphs": {
+        "first": "在初创与企业团队中，同样的问题反复出现：脆弱的发布流程、不清晰的职责归属，以及工程时间被可避免的运维工作消耗。",
+        "second": "所以这里的重点很直接：可靠系统、清晰的交付工作流，以及让软件团队能在不持续救火的情况下交付。"
+      }
+    },
+    "values": {
+      "title": "我们的价值观",
+      "subtitle": "指导我们工作方式与交付结果的原则",
+      "cards": {
+        "execution": {
+          "title": "执行优先",
+          "description": "我们专注把事情做成。不是完美，而是可用于生产。交付永远胜过完美主义。"
+        },
+        "clarity": {
+          "title": "清晰胜过复杂",
+          "description": "用简单方案解决复杂问题。我们去除噪音，聚焦真正对您业务重要的事。"
+        },
+        "reliability": {
+          "title": "可靠性至上",
+          "description": "需要时就能工作的系统。我们围绕可用性、监控与优雅的失败处理来构建。"
+        },
+        "speed": {
+          "title": "快速且正确",
+          "description": "快速交付不等于偷工减料。我们在保证质量与可靠性标准的前提下快速推进。"
+        },
+        "partnership": {
+          "title": "真正的伙伴关系",
+          "description": "我们不是供应商，而是共同投入您成功的合作伙伴。知识转移与团队赋能是内置项。"
+        },
+        "communication": {
+          "title": "直接沟通",
+          "description": "不说官话，不堆术语。我们对挑战与解决方案清晰、诚实、直接地沟通。"
+        }
+      }
+    },
+    "approach": {
+      "title": "我们的方法",
+      "subtitle": "我们如何交付可靠的工程成果",
+      "smallTeam": {
+        "title": "小而资深的团队",
+        "paragraphs": {
+          "first": "我们刻意保持团队小而资深，让沟通保持直接，让技术决策贴近一线工作。",
+          "second": "结果是贴合您上下文的实用方案，而不是通用化的流程负担。"
+        },
+        "checks": {
+          "first": "直接对接资深工程师",
+          "second": "更短的决策链路",
+          "third": "按您的技术栈定制实施"
+        }
+      },
+      "collaboration": {
+        "title": "直接协作",
+        "paragraphs": {
+          "first": "我们保持会议与汇报轻量，把大部分时间投入到实施中。",
+          "second": "您直接与执行构建的工程师合作，获取清晰更新并减少交接。"
+        },
+        "checks": {
+          "first": "编写生产代码的工程师",
+          "second": "轻量流程",
+          "third": "清晰的工作约定"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备和我们合作吗？",
+      "description": "聊聊我们的工程方法如何帮助您更好地交付软件。不需要销售话术。",
+      "action": "开始对话"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "联系 Lorna Dev | 预约咨询",
+      "description": "准备加速您的工程交付效率？预约咨询讨论项目需求。我们专注自动化、架构与可用于生产的系统。"
+    },
+    "hero": {
+      "titlePrefix": "让我们一起构建",
+      "titleHighlight": "更棒的产品",
+      "description": "准备加速您的工程交付效率？聊聊我们如何帮助您更快交付更好的软件。"
+    },
+    "sidebar": {
+      "title": "联系我们",
+      "responseTime": {
+        "title": "响应时间",
+        "description": "我们通常在工作日 24 小时内回复。紧急事项请在消息中说明。"
+      },
+      "expectations": {
+        "title": "您将获得什么",
+        "description": "我们会讨论您的项目需求、时间线，以及我们的工程专长如何帮助加速开发效率。"
+      },
+      "noPressure": {
+        "title": "无压力",
+        "description": "这是一场对话，不是销售推销。我们会先理解您的挑战，再一起判断是否匹配。"
+      },
+      "directEmail": "更喜欢邮件？请直接联系"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": {
+        "cost": {
+          "question": "费用是多少？",
+          "answer": "定价取决于项目范围与周期。我们同时提供固定价格项目与按月顾问服务。了解您的需求后我们会给出详细报价。"
+        },
+        "remote": {
+          "question": "你们远程合作吗？",
+          "answer": "是的，我们远程优先。我们可与您的现有团队远程协作，或按您的偏好与项目需求驻场合作。"
+        },
+        "timeline": {
+          "question": "你们的典型周期是什么？",
+          "answer": "大多数项目从 1-2 周的调研阶段开始，然后进入实施。通常在达成协议后的 1-2 周内即可开始。"
+        },
+        "support": {
+          "question": "你们提供持续支持吗？",
+          "answer": "是的，我们提供上线后支持与维护套餐。我们关注长期成功，而不仅是项目交付完成。"
+        }
+      }
+    },
+    "form": {
+      "success": {
+        "title": "消息已发送！",
+        "description": "感谢联系。我们会在 24 小时内回复您。",
+        "action": "再发一条消息"
+      },
+      "honeypotLabel": "此字段留空",
+      "fields": {
+        "name": {
+          "label": "姓名 *",
+          "placeholder": "您的全名"
+        },
+        "email": {
+          "label": "邮箱 *",
+          "placeholder": "your.email@company.com"
+        },
+        "company": {
+          "label": "公司",
+          "placeholder": "您的公司名称"
+        },
+        "projectType": {
+          "label": "项目类型"
+        },
+        "budget": {
+          "label": "预算范围"
+        },
+        "message": {
+          "label": "消息 *",
+          "placeholder": "介绍一下您的项目、挑战与目标。信息越具体，我们就越能高效地帮助您。"
+        }
+      },
+      "projectType": {
+        "placeholder": "选择项目类型...",
+        "automation": "自动化与工作流",
+        "architecture": "系统架构与重构",
+        "performance": "性能与成本优化",
+        "integrations": "API 集成与数据流",
+        "tools": "内部工具与仪表板",
+        "mvp": "快速 MVP → 生产",
+        "other": "其他 / 定制项目"
+      },
+      "budget": {
+        "placeholder": "选择预算范围...",
+        "under25": "低于 $25,000",
+        "range25to50": "$25,000 - $50,000",
+        "range50to100": "$50,000 - $100,000",
+        "range100to250": "$100,000 - $250,000",
+        "above250": "$250,000+",
+        "discuss": "聊聊再定"
+      },
+      "validation": {
+        "nameRequired": "姓名为必填项",
+        "emailRequired": "邮箱为必填项",
+        "emailInvalid": "请输入有效的邮箱地址",
+        "messageRequired": "消息为必填项",
+        "messageTooShort": "请提供更多项目细节"
+      },
+      "errors": {
+        "sendFailed": "发送消息失败",
+        "sendFailedRetry": "发送消息失败。请重试。"
+      },
+      "privacyNote": "我们尊重您的隐私。您的信息仅用于回复咨询，绝不会与第三方共享。"
+    }
+  },
+  "solutionsPage": {
+    "meta": {
+      "title": "工程解决方案 | Lorna Dev",
+      "description": "专业工程咨询服务：自动化、系统架构、性能优化、API 集成与可用于生产的开发。"
+    },
+    "hero": {
+      "titlePrefix": "工程",
+      "titleHighlight": "解决方案",
+      "description": "旨在加速您的开发效率并交付可用于生产系统的专业咨询服务。"
+    },
+    "labels": {
+      "whoFor": "适用对象",
+      "painPoints": "解决的痛点",
+      "deliverables": "交付物"
+    },
+    "cta": {
+      "title": "需要定制方案？",
+      "description": "每个工程挑战都不同。聊聊您的具体需求，我们会设计符合目标与约束的方案。",
+      "action": "开始对话"
+    }
+  },
+  "solutionDetail": {
+    "viewAll": "查看所有解决方案",
+    "stats": {
+      "timeline": "典型周期",
+      "model": "合作模式"
+    },
+    "sections": {
+      "whoFor": "适用对象",
+      "painPoints": "覆盖的痛点",
+      "deliverables": "典型交付物"
+    },
+    "cta": {
+      "title": "准备 {action} 吗？",
+      "description": "聊聊该方案如何帮助加速您的工程交付效率，并为您的团队带来更好的结果。",
+      "fallbackAction": "开始"
+    }
+  },
+  "workPage": {
+    "meta": {
+      "title": "作品与案例研究 | Lorna Dev",
+      "description": "展示自动化、性能优化与系统架构项目的工程案例研究。来自生产落地的真实成果。"
+    },
+    "hero": {
+      "titlePrefix": "工程",
+      "titleHighlight": "案例研究",
+      "description": "真实项目，可衡量的成果。看看我们如何帮助团队更好地交付软件并加速开发效率。",
+      "note": "提供精选案例。可按需提供完整案例研究。"
+    },
+    "featured": {
+      "title": "精选项目",
+      "description": "展示全面工程解决方案的重点案例研究"
+    },
+    "all": {
+      "title": "所有案例研究",
+      "description": "覆盖不同行业与技术挑战的完整项目示例"
+    },
+    "labels": {
+      "challenge": "挑战",
+      "results": "结果",
+      "keyResults": "关键结果",
+      "more": "+{count} 更多"
+    },
+    "cta": {
+      "title": "准备打造您的成功案例？",
+      "description": "聊聊您的工程挑战，一起创建展示真实成果与可衡量影响的案例研究。",
+      "action": "启动您的项目"
+    }
+  },
+  "workDetail": {
+    "labels": {
+      "keyResults": "关键结果",
+      "constraints": "约束条件",
+      "techStack": "技术栈",
+      "deliverables": "交付物",
+      "approach": "方法"
+    },
+    "cta": {
+      "title": "准备获得类似成果？",
+      "description": "聊聊我们如何帮助您在工程挑战上取得可对标的结果。",
+      "primary": "启动您的项目",
+      "secondary": "查看更多案例研究"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "隐私政策 | Lorna Dev",
+      "description": "Lorna Dev 如何收集、使用并保护您的个人信息。我们尊重您的隐私，并致力于透明化。"
+    },
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2026 年 1 月 12 日",
+    "lead": "在 Lorna Dev，我们尊重您的隐私，并致力于保护您的个人信息。本隐私政策说明您在与我们的服务互动时，我们如何收集、使用并保护您的数据。",
+    "sections": [
+      {
+        "heading": "我们收集的信息",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "联系表单提交"
+          },
+          {
+            "type": "paragraph",
+            "text": "当您提交我们的联系表单时，我们会收集："
+          },
+          {
+            "type": "list",
+            "items": [
+              "姓名 - 便于在沟通中称呼您",
+              "邮箱地址 - 用于回复您的咨询并发送项目更新",
+              "公司名称（可选） - 用于了解您的业务背景",
+              "项目详情 - 用于提供相关咨询服务",
+              "预算信息（可选） - 用于确保项目范围一致"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "技术信息"
+          },
+          {
+            "type": "paragraph",
+            "text": "当您访问我们的网站时，我们会自动收集某些技术信息："
+          },
+          {
+            "type": "list",
+            "items": [
+              "IP 地址与位置数据（用于垃圾信息防护与分析）",
+              "浏览器类型与版本",
+              "访问页面与在站停留时间",
+              "来源网站信息"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "我们如何使用您的信息",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们将收集的信息用于以下目的："
+          },
+          {
+            "type": "list",
+            "items": [
+              "沟通 - 回复您的咨询并提供项目更新",
+              "服务交付 - 了解您的需求并提供相关咨询服务",
+              "业务运营 - 管理我们的联系人数据库并改进服务",
+              "法律合规 - 遵守适用的法律法规",
+              "分析 - 了解网站使用情况并改进用户体验"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "信息共享与披露",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们不会出售、交易或以其他方式向第三方转让您的个人信息，除非在以下情况："
+          },
+          {
+            "type": "list",
+            "items": [
+              "服务提供商 - 我们可能与可信的第三方服务提供商共享信息，用于协助运营我们的网站与业务（例如：邮件服务提供商）",
+              "法律要求 - 如法律要求，或为保护我们的权利与安全，我们可能披露信息",
+              "业务转让 - 在合并、收购或资产出售的情况下，您的信息可能被转移"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "数据安全",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们采取适当的技术与组织安全措施，保护您的个人信息免受未经授权的访问、篡改、披露或销毁。这些措施包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "对敏感数据在传输与存储中的加密",
+              "定期安全审计与更新",
+              "基于“需要知道”的原则限制对个人信息的访问",
+              "安全的数据存储与备份流程"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "数据保留",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们会在提供服务与实现本隐私政策所述目的所需的期限内保留您的个人信息，除非法律要求更长保留期。联系表单提交通常会为业务与法律目的保留 3 年。"
+          }
+        ]
+      },
+      {
+        "heading": "您的权利",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "根据您所在地区，您可能拥有以下与个人信息相关的权利："
+          },
+          {
+            "type": "list",
+            "items": [
+              "访问 - 请求获取我们持有的您的个人信息副本",
+              "更正 - 请求更正不准确或不完整的信息",
+              "删除 - 请求删除您的个人信息",
+              "可携带性 - 请求将您的数据转移到其他服务",
+              "反对 - 反对处理您的个人信息"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "如需行使这些权利，请通过下方邮箱联系我们。"
+          }
+        ]
+      },
+      {
+        "heading": "Cookies 与分析",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们使用 cookies 与类似技术来增强您的网站体验并分析使用模式。我们使用："
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plausible Analytics - 注重隐私的分析工具，不使用 cookies 或追踪个人信息",
+              "Google Analytics 4（可选） - 用于更详细的网站分析与转化追踪"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "第三方服务",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们的网站可能包含指向第三方网站的链接。我们不对这些外部网站的隐私实践负责。我们建议您查看您访问的任何第三方网站的隐私政策。"
+          }
+        ]
+      },
+      {
+        "heading": "儿童隐私",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们的服务不面向 13 岁以下儿童。我们不会在知情情况下收集 13 岁以下儿童的个人信息。如果我们发现已收集到 13 岁以下儿童的个人信息，我们将采取措施删除这些信息。"
+          }
+        ]
+      },
+      {
+        "heading": "本隐私政策的变更",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们可能会不时更新本隐私政策。我们将通过在本页面发布新的隐私政策并更新“最后更新”日期来通知您任何变更。我们建议您定期查看本隐私政策。"
+          }
+        ]
+      },
+      {
+        "heading": "联系我们",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "如果您对本隐私政策或我们的数据实践有任何疑问，请联系我们："
+          }
+        ]
+      }
+    ],
+    "contactCard": {
+      "emailLabel": "邮箱：",
+      "email": "hello@lornadev.com",
+      "responseTimeLabel": "响应时间：",
+      "responseTime": "我们通常在 24-48 小时内回复"
+    },
+    "disclaimer": {
+      "heading": "免责声明",
+      "title": "重要：",
+      "text": "本隐私政策仅供信息参考，不构成法律意见。Lorna Dev 提供工程咨询服务，但不是律师事务所。如需关于隐私与数据保护的法律意见，请咨询具备资质的法律专业人士。"
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "服务条款 | Lorna Dev",
+      "description": "Lorna Dev 工程咨询服务的条款与条件。明确项目合作与交付物的预期。"
+    },
+    "title": "服务条款",
+    "lastUpdated": "最后更新：2026 年 1 月 12 日",
+    "lead": "本服务条款（“条款”）规范您对 Lorna Dev 工程咨询服务与网站的使用。通过聘用我们的服务或使用我们的网站，您同意这些条款。",
+    "sections": [
+      {
+        "heading": "服务概述",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Lorna Dev 提供的工程咨询服务包括但不限于："
+          },
+          {
+            "type": "list",
+            "items": [
+              "软件开发与架构咨询",
+              "系统自动化与工作流优化",
+              "性能优化与成本降低",
+              "API 集成与数据流设计",
+              "内部工具与仪表板开发",
+              "代码审查与技术指导"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "项目合作",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "项目提案与协议"
+          },
+          {
+            "type": "paragraph",
+            "text": "所有项目从调研阶段开始，以了解您的需求、约束与目标。我们将提供详细项目提案，包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "工作范围与交付物",
+              "时间线与里程碑",
+              "预估成本与付款条款",
+              "成功标准与验收流程"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "项目仅在双方就范围、时间线与费用达成一致后推进。"
+          },
+          {
+            "type": "subheading",
+            "text": "沟通与协作"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们在项目过程中保持定期沟通："
+          },
+          {
+            "type": "list",
+            "items": [
+              "每周进度更新与状态报告",
+              "直接对接工程团队",
+              "定期复盘与里程碑评审",
+              "任何问题或阻塞的即时通知"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "付款条款",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "付款结构"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们根据项目类型提供灵活的付款结构："
+          },
+          {
+            "type": "list",
+            "items": [
+              "固定价格项目：约定总价并按里程碑进度付款",
+              "按月顾问服务：按月循环付款以获得持续支持",
+              "咨询顾问服务：按小时或按天计费"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "付款计划"
+          },
+          {
+            "type": "list",
+            "items": [
+              "开始工作前支付 50% 预付款",
+              "完成主要里程碑后支付 25%",
+              "最终交付并验收后支付 25%",
+              "按月顾问客户为 Net 30 付款条款"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "逾期付款"
+          },
+          {
+            "type": "paragraph",
+            "text": "未在到期日前收到付款可能导致："
+          },
+          {
+            "type": "list",
+            "items": [
+              "暂停工作直至收到付款",
+              "因项目时间线延误产生的额外费用",
+              "对逾期金额收取利息（每月 1.5%）"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "项目交付与验收",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "交付物"
+          },
+          {
+            "type": "paragraph",
+            "text": "所有交付物包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "遵循行业最佳实践的可用于生产代码",
+              "全面文档与运行手册",
+              "自动化测试与部署流水线",
+              "监控与告警配置",
+              "知识转移与团队培训"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "验收流程"
+          },
+          {
+            "type": "paragraph",
+            "text": "项目验收要求："
+          },
+          {
+            "type": "list",
+            "items": [
+              "成功部署至预发布环境",
+              "完成约定的测试用例",
+              "文档评审并通过",
+              "客户对所有交付物签收确认"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "范围变更与额外工作",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "项目范围变更可能影响时间线与成本。我们遵循以下范围变更流程："
+          },
+          {
+            "type": "ordered",
+            "items": [
+              "书面提出范围变更请求",
+              "影响评估（时间、成本、风险）",
+              "双方就变更达成一致",
+              "更新项目计划与时间线",
+              "如需则进行正式合同补充/修订"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "项目中发现的额外工作会被记录，并可能需要单独协议。"
+          }
+        ]
+      },
+      {
+        "heading": "知识产权",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "客户工作"
+          },
+          {
+            "type": "paragraph",
+            "text": "为客户完成的所有工作均归客户所有。我们不保留客户特定代码、设计或解决方案的任何权利。"
+          },
+          {
+            "type": "subheading",
+            "text": "我们的工具与方法论"
+          },
+          {
+            "type": "paragraph",
+            "text": "Lorna Dev 保留以下内容的所有权："
+          },
+          {
+            "type": "list",
+            "items": [
+              "团队开发的内部工具与框架",
+              "咨询方法论与流程",
+              "可复用的代码库与组件",
+              "文档模板与最佳实践"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "保密",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "双方同意对以下内容保密："
+          },
+          {
+            "type": "list",
+            "items": [
+              "专有商业信息",
+              "技术实现与架构",
+              "客户数据与系统",
+              "项目细节与定价"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "保密义务在合作终止后仍然有效。"
+          }
+        ]
+      },
+      {
+        "heading": "责任与保证",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "服务保证"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们保证以专业方式并依据行业标准提供服务。但："
+          },
+          {
+            "type": "list",
+            "items": [
+              "我们不保证特定的业务结果或收益",
+              "系统性能受多种我们无法控制的因素影响",
+              "第三方服务与集成不在本保证范围内"
+            ]
+          },
+          {
+            "type": "subheading",
+            "text": "责任限制"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们因服务产生的任何索赔总责任以过去 12 个月内为该特定服务支付的金额为上限。"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们不对以下情况承担责任："
+          },
+          {
+            "type": "list",
+            "items": [
+              "间接、附带或后果性损害",
+              "利润、数据或商业机会的损失",
+              "第三方索赔或争议",
+              "由客户提供的信息或需求导致的问题"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "终止",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "任一方可提前 30 天书面通知终止协议。终止后："
+          },
+          {
+            "type": "list",
+            "items": [
+              "所有未结付款将立即到期",
+              "进行中的工作将按完成比例完成或获得补偿",
+              "按要求归还或销毁所有客户材料",
+              "保密义务继续有效"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "争议解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们倾向通过直接沟通友好解决争议。如无法达成解决："
+          },
+          {
+            "type": "ordered",
+            "items": [
+              "与中立第三方进行非约束性调解",
+              "依据当地法律进行具有约束力的仲裁",
+              "在客户司法管辖区的法院提起法律诉讼"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "不可抗力",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "任何一方均不对因合理控制之外的事件导致的延误或失败承担责任，包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "自然灾害或天灾",
+              "战争、恐怖主义或社会动荡",
+              "政府限制或法规",
+              "互联网或通信故障",
+              "疫情或公共卫生紧急事件"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "适用法律",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "本条款适用客户所在司法管辖区的法律，不考虑法律冲突原则。"
+          }
+        ]
+      },
+      {
+        "heading": "条款变更",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我们可能会不时更新本条款。变更将通过邮件通知或在我们网站发布，并对现有客户提供 30 天的通知期。"
+          }
+        ]
+      },
+      {
+        "heading": "联系信息",
+        "blocks": []
+      }
+    ],
+    "contactCard": {
+      "emailLabel": "邮箱：",
+      "email": "hello@lornadev.com",
+      "responseTimeLabel": "响应时间：",
+      "responseTime": "我们通常在 24-48 小时内回复"
+    },
+    "acceptance": {
+      "heading": "接受条款",
+      "title": "重要：",
+      "text": "通过聘用 Lorna Dev 的服务，您确认已阅读、理解并同意本服务条款。本条款构成双方之间的完整协议，并取代此前所有协议或理解。"
+    }
+  },
+  "api": {
+    "contact": {
+      "errors": {
+        "nameRequired": "姓名为必填项",
+        "emailRequired": "邮箱为必填项",
+        "invalidEmail": "无效的邮箱地址",
+        "messageRequired": "消息为必填项",
+        "internal": "服务器内部错误。请稍后重试。",
+        "unauthorized": "未授权",
+        "fetchFailed": "获取提交记录失败"
+      },
+      "success": {
+        "messageSent": "消息发送成功"
+      },
+      "email": {
+        "subject": "来自 {name} 的新联系表单提交",
+        "title": "新联系表单提交",
+        "detailsTitle": "联系方式",
+        "messageTitle": "消息",
+        "submissionId": "提交 ID：",
+        "submitted": "提交时间：",
+        "ipAddress": "IP 地址：",
+        "reply": "回复 {name}",
+        "fields": {
+          "name": "姓名：",
+          "email": "邮箱：",
+          "company": "公司：",
+          "projectType": "项目类型：",
+          "budgetRange": "预算范围："
+        }
+      }
+    }
+  },
+  "content": {
+    "solutions": {
+      "automation": {
+        "title": "自动化与工作流系统",
+        "description": "通过智能自动化系统、CI/CD 流水线与工作流优化，将手动操作减少 80%。",
+        "whoFor": "被手动流程、部署瓶颈或重复性任务拖慢开发效率的工程团队。",
+        "painPoints": {
+          "manualDeployments": "手动部署流程耗时数小时",
+          "repetitiveTesting": "重复的测试与质量检查",
+          "environmentDrift": "开发环境不一致",
+          "delayedFeedback": "反馈闭环延迟",
+          "humanError": "运维任务中的人为错误"
+        },
+        "deliverables": {
+          "pipelines": "自动化 CI/CD 流水线",
+          "iac": "基础设施即代码（IaC）配置",
+          "tests": "自动化测试套件",
+          "monitoring": "监控与告警系统",
+          "docs": "文档与运行手册"
+        },
+        "timeline": "2-6 周",
+        "ctaText": "自动化您的工作流"
+      },
+      "architecture": {
+        "title": "系统架构与重构",
+        "description": "现代化遗留系统，设计可扩展架构，并为可维护性与性能进行重构。",
+        "whoFor": "系统老化、存在性能瓶颈，或架构无法随业务增长扩展的团队。",
+        "painPoints": {
+          "legacy": "难以维护的遗留系统",
+          "performance": "高负载下的性能瓶颈",
+          "inflexible": "对新功能不够灵活的架构",
+          "debt": "技术债拖慢开发",
+          "scalability": "可扩展性限制"
+        },
+        "deliverables": {
+          "documentation": "架构文档与图示",
+          "refactor": "结构更佳的重构代码库",
+          "optimization": "性能优化",
+          "scaling": "可扩展性改进",
+          "migration": "迁移计划与执行"
+        },
+        "timeline": "4-12 周",
+        "ctaText": "现代化您的架构"
+      },
+      "performance": {
+        "title": "性能与成本优化",
+        "description": "在提升响应速度与系统可靠性的同时，将基础设施成本降低 40%。",
+        "whoFor": "面临高基础设施成本、性能缓慢或资源利用效率低下的团队。",
+        "painPoints": {
+          "cost": "云基础设施成本高",
+          "latency": "应用响应时间慢",
+          "inefficiency": "资源利用效率低",
+          "degradation": "高负载下性能退化",
+          "ux": "用户体验差"
+        },
+        "deliverables": {
+          "audit": "性能审计与建议",
+          "infra": "基础设施成本优化",
+          "app": "应用性能改进",
+          "monitoring": "监控与告警配置",
+          "docs": "优化文档"
+        },
+        "timeline": "2-8 周",
+        "ctaText": "优化性能与成本"
+      }
+    },
+    "work": {
+      "cicd": {
+        "title": "CI/CD 流水线现代化",
+        "client": "金融科技初创公司",
+        "problem": "手动部署流程耗时 4+ 小时，频繁回滚事故，各开发阶段环境不一致。",
+        "constraints": {
+          "devops": "DevOps 资源有限",
+          "legacy": "遗留单体应用",
+          "cloud": "同时使用多个云服务提供商",
+          "compliance": "监管合规要求"
+        },
+        "approach": "使用 GitHub Actions 实现完整 CI/CD 自动化，用 Docker 容器化应用，并用 Terraform 配置基础设施即代码。构建全面测试套件并自动化安全扫描。",
+        "deliverables": {
+          "pipeline": "完整 CI/CD 流水线",
+          "docker": "Docker 容器化",
+          "iac": "基础设施即代码配置",
+          "testing": "自动化测试套件",
+          "security": "安全扫描集成",
+          "documentation": "部署文档"
+        },
+        "results": {
+          "speed": "部署时间减少 90%",
+          "stability": "6 个月内零部署失败",
+          "consistency": "所有阶段环境一致",
+          "compliance": "自动化合规报告",
+          "productivity": "提升开发者生产力"
+        },
+        "stack": [
+          "GitHub Actions",
+          "Docker",
+          "Terraform",
+          "AWS",
+          "Jest",
+          "Cypress",
+          "SonarQube"
+        ],
+        "timeline": "8 周"
+      },
+      "apiPerformance": {
+        "title": "API 性能优化",
+        "client": "电商平台",
+        "problem": "REST API 响应时间在高负载下从 200ms 退化到 2+ 秒，导致结账失败与客户流失。",
+        "constraints": {
+          "contracts": "不能更改现有 API 契约",
+          "schema": "数据库 schema 因第三方集成而被锁定",
+          "uptime": "需要 24/7 可用性",
+          "maintenance": "维护窗口有限"
+        },
+        "approach": "进行全面性能审计，实施多层缓存策略，优化数据库查询，并在不破坏现有契约的前提下加入水平扩展能力。",
+        "deliverables": {
+          "audit": "性能审计报告",
+          "caching": "多层缓存实现",
+          "query": "数据库查询优化",
+          "load": "负载均衡配置",
+          "dashboard": "监控仪表板",
+          "testing": "性能测试套件"
+        },
+        "results": {
+          "latency": "API 响应时间提升 85%",
+          "db": "数据库负载降低 60%",
+          "uptime": "保持 99.9% 可用性",
+          "cost": "基础设施成本降低 50%",
+          "ux": "改善客户体验"
+        },
+        "stack": [
+          "Node.js",
+          "PostgreSQL",
+          "Redis",
+          "AWS ELB",
+          "DataDog",
+          "k6"
+        ],
+        "timeline": "6 周"
+      }
+    }
+  }
+}

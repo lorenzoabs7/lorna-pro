@@ -30,17 +30,20 @@ function getQueryLocaleFromAstro(astro: any): Locale | null {
 }
 
 export function resolveServerLocale(astro: any): Locale {
-  const queryLocale = getQueryLocaleFromAstro(astro);
-  if (queryLocale) return queryLocale;
-
   const cookieLocale = getCookieLocaleFromAstro(astro);
   const acceptLanguage = astro?.request?.headers?.get?.('accept-language') ?? null;
   const browserLocale = detectLocaleFromAcceptLanguage(acceptLanguage);
-  return resolveLocale({
+
+  const resolved = resolveLocale({
     cookie: cookieLocale,
     browser: browserLocale ? [browserLocale] : null,
     fallback: DEFAULT_LOCALE
   });
+
+  // ?locale= query param is a last-resort override (e.g. shared links).
+  // Cookie takes precedence so regular navigation never needs the param.
+  const queryLocale = getQueryLocaleFromAstro(astro);
+  return queryLocale ?? resolved;
 }
 
 export function getI18nContext(astro: any): I18nServerContext {
@@ -58,6 +61,8 @@ export function getI18nContext(astro: any): I18nServerContext {
   const locale = resolveServerLocale(astro);
   const queryLocale = getQueryLocaleFromAstro(astro);
 
+  // Persist a ?locale= override to the cookie so subsequent requests are
+  // clean (no query param needed) and the preference is remembered.
   if (queryLocale && astro?.cookies?.set) {
     astro.cookies.set(LOCALE_COOKIE_NAME, queryLocale, {
       path: '/',
