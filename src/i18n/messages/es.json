@@ -69,7 +69,7 @@
   },
   "footer": {
     "description": "Consultoría de ingeniería enfocada en entrega. Construimos sistemas listos para producción, automatizamos flujos de trabajo y aceleramos tu velocidad de desarrollo.",
-    "email": "[hello@lornadev.com](mailto:hello@lornadev.com)",
+    "email": "hello@lornadev.com",
     "location": "Remote-first, entrega global",
     "sections": {
       "services": "Servicios",
@@ -531,7 +531,7 @@
         },
         "email": {
           "label": "Email *",
-          "placeholder": "[tu.email@empresa.com](mailto:tu.email@empresa.com)"
+          "placeholder": "tu.email@empresa.com"
         },
         "company": {
           "label": "Empresa",
@@ -855,7 +855,7 @@
     ],
     "contactCard": {
       "emailLabel": "Email:",
-      "email": "[hello@lornadev.com](mailto:hello@lornadev.com)",
+      "email": "hello@lornadev.com",
       "responseTimeLabel": "Tiempo de respuesta:",
       "responseTime": "Solemos responder dentro de 24-48 horas"
     },
@@ -1223,7 +1223,7 @@
     ],
     "contactCard": {
       "emailLabel": "Email:",
-      "email": "[hello@lornadev.com](mailto:hello@lornadev.com)",
+      "email": "hello@lornadev.com",
       "responseTimeLabel": "Tiempo de respuesta:",
       "responseTime": "Solemos responder dentro de 24-48 horas"
     },
@@ -1330,6 +1330,48 @@
         },
         "timeline": "2-8 semanas",
         "ctaText": "Optimizá performance y costos"
+      },
+      "websites": {
+        "title": "Sitios web y experiencias digitales a medida",
+        "description": "Creá sitios web de alta conversión, diseñados en función de tu modelo de negocio, tu marca y tus objetivos de crecimiento.",
+        "whoFor": "Empresas que necesitan más que una plantilla genérica: negocios que lanzan nuevas ofertas, presentan productos o servicios, validan ideas o quieren convertir su presencia digital en un activo real de crecimiento.",
+        "painPoints": {
+          "genericDesign": "Sitios genéricos que no reflejan la marca ni el posicionamiento",
+          "poorPresentation": "Presentación débil de productos, servicios o soluciones",
+          "lowConversion": "Páginas de baja conversión con mensajes poco claros",
+          "rigidStructure": "Estructuras de sitio difíciles de actualizar o inflexibles",
+          "outdatedExperience": "Experiencias de usuario lentas, desactualizadas o inconsistentes"
+        },
+        "deliverables": {
+          "customSite": "Sitio web o landing page completamente a medida",
+          "showcasePages": "Páginas de presentación de productos, servicios y soluciones",
+          "conversionLayout": "Estructura de página y layout de mensajes orientados a conversión",
+          "frontend": "Implementación frontend responsive y de alto rendimiento",
+          "cms": "CMS o estructura de contenido escalable según necesidad"
+        },
+        "timeline": "2-8 semanas",
+        "ctaText": "Construí tu presencia digital"
+      },
+      "aiSolutions": {
+        "title": "Soluciones de IA, workflows y bots",
+        "description": "Implementá sistemas de IA prácticos que automaticen procesos, asistan equipos y generen nuevo apalancamiento operativo en tu negocio.",
+        "whoFor": "Equipos que quieren ir más allá del trabajo manual y las herramientas genéricas de IA, implementando workflows, asistentes, bots o sistemas internos con IA adaptados a necesidades reales del negocio.",
+        "painPoints": {
+          "repetitiveWork": "Trabajo de conocimiento repetitivo que consume capacidad del equipo",
+          "slowProcesses": "Procesos internos lentos y flujos de decisión poco ágiles",
+          "disconnectedTools": "Herramientas desconectadas y transferencias manuales entre sistemas",
+          "noInternalAI": "Sin sistemas internos de IA adaptados al negocio",
+          "missedAutomation": "Oportunidades perdidas de automatizar soporte, operaciones o análisis"
+        },
+        "deliverables": {
+          "workflows": "Workflows de IA y automatizaciones de procesos a medida",
+          "bots": "Bots y asistentes específicos para el negocio",
+          "copilots": "Copilotos internos de conocimiento o soporte",
+          "integrations": "Integraciones de IA con herramientas y sistemas existentes",
+          "rollout": "Documentación, salvaguardas y guía de rollout operativo"
+        },
+        "timeline": "2-8 semanas",
+        "ctaText": "Implementá IA que funcione"
       }
     },
     "work": {

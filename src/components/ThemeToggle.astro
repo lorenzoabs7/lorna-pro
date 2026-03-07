@@ -24,7 +24,7 @@ const toggleLabel = t('theme.toggle');
 </button>
 
 <script>
-  (function() {
+  function initThemeToggle() {
     const btn = document.getElementById('theme-toggle');
     const html = document.documentElement;
     const iconLight = document.querySelector('.theme-icon-light');
@@ -48,5 +48,7 @@ const toggleLabel = t('theme.toggle');
 
     btn?.addEventListener('click', toggle);
     syncIcons(html.classList.contains('dark'));
-  })();
+  }
+
+  document.addEventListener('astro:page-load', initThemeToggle);
 </script>

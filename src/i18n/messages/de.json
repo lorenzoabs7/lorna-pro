@@ -1330,6 +1330,48 @@
         },
         "timeline": "2-8 Wochen",
         "ctaText": "Performance & Kosten optimieren"
+      },
+      "websites": {
+        "title": "Individuelle Websites & Digitale Erlebnisse",
+        "description": "Erstellen Sie hochkonvertierende, maßgeschneiderte Websites, die auf Ihr Geschäftsmodell, Ihre Marke und Ihre Wachstumsziele ausgerichtet sind.",
+        "whoFor": "Unternehmen, die mehr als ein generisches Template brauchen: Firmen, die neue Angebote launchen, Produkte oder Dienstleistungen präsentieren, Ideen validieren oder ihre digitale Präsenz in ein echtes Wachstumsinstrument verwandeln möchten.",
+        "painPoints": {
+          "genericDesign": "Generische Websites, die Marke und Positionierung nicht widerspiegeln",
+          "poorPresentation": "Schwache Präsentation von Produkten, Dienstleistungen oder Lösungen",
+          "lowConversion": "Schwach konvertierende Seiten mit unklaren Botschaften",
+          "rigidStructure": "Schwer zu aktualisierende oder unflexible Website-Strukturen",
+          "outdatedExperience": "Langsame, veraltete oder inkonsistente Nutzererlebnisse"
+        },
+        "deliverables": {
+          "customSite": "Vollständig individuelle Website oder Landing Page",
+          "showcasePages": "Präsentationsseiten für Produkte, Dienstleistungen und Lösungen",
+          "conversionLayout": "Conversion-orientierte Seitenstruktur und Messaging-Layout",
+          "frontend": "Responsive, hochperformante Frontend-Implementierung",
+          "cms": "CMS oder skalierbare Content-Struktur nach Bedarf"
+        },
+        "timeline": "2-8 Wochen",
+        "ctaText": "Digitale Präsenz aufbauen"
+      },
+      "aiSolutions": {
+        "title": "KI-Lösungen, Workflows & Bots",
+        "description": "Implementieren Sie praktische KI-Systeme, die Prozesse automatisieren, Teams unterstützen und neue operative Hebelwirkung in Ihrem Unternehmen erzeugen.",
+        "whoFor": "Teams, die über manuelle Arbeit und generische KI-Tools hinausgehen wollen, indem sie individuelle Workflows, Assistenten, Bots oder KI-gestützte interne Systeme für reale Business-Bedürfnisse implementieren.",
+        "painPoints": {
+          "repetitiveWork": "Repetitive Wissensarbeit, die Team-Kapazität bindet",
+          "slowProcesses": "Langsame interne Prozesse und Entscheidungsabläufe",
+          "disconnectedTools": "Nicht verbundene Tools und manuelle Übergaben zwischen Systemen",
+          "noInternalAI": "Keine auf das Business zugeschnittenen internen KI-Systeme",
+          "missedAutomation": "Verpasste Chancen, Support, Betrieb oder Analysen zu automatisieren"
+        },
+        "deliverables": {
+          "workflows": "Individuelle KI-Workflows und Prozessautomatisierungen",
+          "bots": "Business-spezifische Bots und Assistenten",
+          "copilots": "Interne Wissens- oder Support-Copiloten",
+          "integrations": "KI-Integrationen mit bestehenden Tools und Systemen",
+          "rollout": "Dokumentation, Sicherheitsmechanismen und Rollout-Leitfaden"
+        },
+        "timeline": "2-8 Wochen",
+        "ctaText": "KI implementieren, die funktioniert"
       }
     },
     "work": {

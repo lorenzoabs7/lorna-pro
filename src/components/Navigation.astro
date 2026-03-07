@@ -135,27 +135,29 @@ const links = [
 </nav>
 
 <script>
-  (window as any).toggleMobileMenu = function () {
+  function closeMobileMenuOnOutsideClick(e: MouseEvent) {
     const menu = document.getElementById('mobile-menu');
     const button = document.querySelector('.mobile-menu-button');
-    const isExpanded = button?.getAttribute('aria-expanded') === 'true';
-
-    if (menu) {
-      menu.classList.toggle('hidden');
-    }
-
-    if (button) {
-      button.setAttribute('aria-expanded', (!isExpanded).toString());
-    }
-  };
-
-  document.addEventListener('click', (e) => {
-    const menu = document.getElementById('mobile-menu');
-    const button = document.querySelector('.mobile-menu-button');
-
     if (!menu?.contains(e.target as Node) && !button?.contains(e.target as Node)) {
       menu?.classList.add('hidden');
       button?.setAttribute('aria-expanded', 'false');
     }
-  });
+  }
+
+  function initMobileMenu() {
+    (window as any).toggleMobileMenu = function () {
+      const menu = document.getElementById('mobile-menu');
+      const button = document.querySelector('.mobile-menu-button');
+      const isExpanded = button?.getAttribute('aria-expanded') === 'true';
+      if (menu) menu.classList.toggle('hidden');
+      if (button) button.setAttribute('aria-expanded', (!isExpanded).toString());
+    };
+
+    // Remove any previously registered listener before adding a fresh one so
+    // navigating between pages doesn't stack up duplicate handlers.
+    document.removeEventListener('click', closeMobileMenuOnOutsideClick);
+    document.addEventListener('click', closeMobileMenuOnOutsideClick);
+  }
+
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>

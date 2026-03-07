@@ -1330,6 +1330,48 @@
         },
         "timeline": "2-8 周",
         "ctaText": "优化性能与成本"
+      },
+      "websites": {
+        "title": "定制网站与数字体验",
+        "description": "打造高转化率的定制网站，围绕您的商业模式、品牌与增长目标量身设计。",
+        "whoFor": "需要超越通用模板的企业：正在推出新产品、展示服务或解决方案、验证创意，或希望将数字存在升级为真正增长资产的公司。",
+        "painPoints": {
+          "genericDesign": "通用网站无法体现品牌定位",
+          "poorPresentation": "产品、服务或解决方案呈现效果差",
+          "lowConversion": "信息模糊、转化率低的页面",
+          "rigidStructure": "难以更新或缺乏灵活性的网站结构",
+          "outdatedExperience": "缓慢、过时或不一致的用户体验"
+        },
+        "deliverables": {
+          "customSite": "完全定制的网站或落地页",
+          "showcasePages": "产品、服务与解决方案展示页",
+          "conversionLayout": "以转化为导向的页面结构与信息布局",
+          "frontend": "响应式、高性能前端实现",
+          "cms": "按需提供 CMS 或可扩展内容结构"
+        },
+        "timeline": "2-8 周",
+        "ctaText": "构建您的数字存在"
+      },
+      "aiSolutions": {
+        "title": "AI 解决方案、工作流与机器人",
+        "description": "实施切实可用的 AI 系统，自动化流程、辅助团队，并为整个业务释放新的运营杠杆。",
+        "whoFor": "希望超越手动工作和通用 AI 工具的团队，通过实施定制工作流、助手、机器人或与真实业务需求挂钩的 AI 内部系统来实现突破。",
+        "painPoints": {
+          "repetitiveWork": "重复性知识工作消耗团队大量产能",
+          "slowProcesses": "内部流程缓慢，决策链条不敏捷",
+          "disconnectedTools": "工具割裂，系统间手动交接",
+          "noInternalAI": "缺乏适配业务的内部 AI 系统",
+          "missedAutomation": "错失自动化支持、运营或分析的机会"
+        },
+        "deliverables": {
+          "workflows": "定制 AI 工作流与流程自动化",
+          "bots": "业务专属机器人与助手",
+          "copilots": "内部知识或支持 Copilot",
+          "integrations": "AI 与现有工具和系统的集成",
+          "rollout": "文档、安全机制与运营落地指南"
+        },
+        "timeline": "2-8 周",
+        "ctaText": "实施真正有用的 AI"
       }
     },
     "work": {

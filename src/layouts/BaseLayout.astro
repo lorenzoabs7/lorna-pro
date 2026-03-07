@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 import { getI18n } from '../i18n/server';
 import { LOCALE_COOKIE_NAME, LOCALE_STORAGE_KEY } from '../i18n/locales';
@@ -58,6 +59,7 @@ const { locale } = getI18n(Astro);
     )}
 
     <title>{title}</title>
+    <ViewTransitions />
     <script is:inline define:vars={{ localeCookieName: LOCALE_COOKIE_NAME, localeStorageKey: LOCALE_STORAGE_KEY }}>
       (function() {
         var supported = ['en', 'es', 'it', 'de', 'ru', 'zh'];

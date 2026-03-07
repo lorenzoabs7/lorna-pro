@@ -1330,6 +1330,48 @@
         },
         "timeline": "2-8 settimane",
         "ctaText": "Ottimizza Prestazioni e Costi"
+      },
+      "websites": {
+        "title": "Siti Web ed Esperienze Digitali su Misura",
+        "description": "Realizza siti web ad alta conversione, progettati intorno al tuo modello di business, brand e obiettivi di crescita.",
+        "whoFor": "Aziende che hanno bisogno di più di un template generico: realtà che lanciano nuove offerte, presentano prodotti o servizi, validano idee o vogliono trasformare la propria presenza digitale in un asset di crescita concreto.",
+        "painPoints": {
+          "genericDesign": "Siti generici che non rispecchiano il brand o il posizionamento",
+          "poorPresentation": "Presentazione debole di prodotti, servizi o soluzioni",
+          "lowConversion": "Pagine a bassa conversione con messaggi poco chiari",
+          "rigidStructure": "Strutture di sito difficili da aggiornare o poco flessibili",
+          "outdatedExperience": "Esperienze utente lente, obsolete o incoerenti"
+        },
+        "deliverables": {
+          "customSite": "Sito web o landing page completamente su misura",
+          "showcasePages": "Pagine di presentazione di prodotti, servizi e soluzioni",
+          "conversionLayout": "Struttura di pagina e layout messaggi orientati alla conversione",
+          "frontend": "Implementazione frontend responsive e ad alte prestazioni",
+          "cms": "CMS o struttura di contenuti scalabile se necessario"
+        },
+        "timeline": "2-8 settimane",
+        "ctaText": "Costruisci la Tua Presenza Digitale"
+      },
+      "aiSolutions": {
+        "title": "Soluzioni AI, Workflow e Bot",
+        "description": "Implementa sistemi AI pratici che automatizzano processi, assistono i team e creano nuova leva operativa per il tuo business.",
+        "whoFor": "Team che vogliono andare oltre il lavoro manuale e gli strumenti AI generici, implementando workflow, assistenti, bot o sistemi interni basati su AI legati a reali esigenze aziendali.",
+        "painPoints": {
+          "repetitiveWork": "Lavoro di conoscenza ripetitivo che consuma la capacità del team",
+          "slowProcesses": "Processi interni lenti e flussi decisionali poco agili",
+          "disconnectedTools": "Strumenti disconnessi e passaggi manuali tra sistemi",
+          "noInternalAI": "Nessun sistema AI interno adattato al business",
+          "missedAutomation": "Opportunità mancate di automatizzare supporto, operations o analisi"
+        },
+        "deliverables": {
+          "workflows": "Workflow AI e automazioni di processo su misura",
+          "bots": "Bot e assistenti specifici per il business",
+          "copilots": "Copiloti interni di conoscenza o supporto",
+          "integrations": "Integrazioni AI con strumenti e sistemi esistenti",
+          "rollout": "Documentazione, salvaguardie e guida al rollout operativo"
+        },
+        "timeline": "2-8 settimane",
+        "ctaText": "Implementa AI Che Funziona"
       }
     },
     "work": {

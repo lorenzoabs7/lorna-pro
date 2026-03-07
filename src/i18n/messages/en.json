@@ -1330,6 +1330,48 @@
         },
         "timeline": "2-8 weeks",
         "ctaText": "Optimize Performance & Costs"
+      },
+      "websites": {
+        "title": "Custom Websites & Digital Experiences",
+        "description": "Build high-converting, tailor-made websites designed around your business model, brand, and growth goals.",
+        "whoFor": "Businesses that need more than a generic template — companies launching new offers, showcasing products or services, validating ideas, or upgrading their digital presence into a real growth asset.",
+        "painPoints": {
+          "genericDesign": "Generic websites that don't reflect the brand or positioning",
+          "poorPresentation": "Weak presentation of products, services, or solutions",
+          "lowConversion": "Low-converting pages with unclear messaging",
+          "rigidStructure": "Hard-to-update or inflexible site structures",
+          "outdatedExperience": "Slow, outdated, or inconsistent user experiences"
+        },
+        "deliverables": {
+          "customSite": "Fully custom website or landing page",
+          "showcasePages": "Product, service, and solution showcase pages",
+          "conversionLayout": "Conversion-focused page structure and messaging layout",
+          "frontend": "Responsive, high-performance frontend implementation",
+          "cms": "CMS or scalable content structure when needed"
+        },
+        "timeline": "2-8 weeks",
+        "ctaText": "Build Your Digital Presence"
+      },
+      "aiSolutions": {
+        "title": "AI Solutions, Workflows & Bots",
+        "description": "Implement practical AI systems that automate processes, assist teams, and unlock new operational leverage across your business.",
+        "whoFor": "Teams that want to move beyond manual work and generic AI tools by implementing custom workflows, assistants, bots, or AI-powered internal systems tied to real business needs.",
+        "painPoints": {
+          "repetitiveWork": "Repetitive knowledge work consuming team capacity",
+          "slowProcesses": "Slow internal processes and decision flows",
+          "disconnectedTools": "Disconnected tools and manual handoffs between systems",
+          "noInternalAI": "No internal AI systems tailored to the business",
+          "missedAutomation": "Missed opportunities to automate support, operations, or analysis"
+        },
+        "deliverables": {
+          "workflows": "Custom AI workflows and process automations",
+          "bots": "Business-specific bots and assistants",
+          "copilots": "Internal knowledge or support copilots",
+          "integrations": "AI integrations with existing tools and systems",
+          "rollout": "Documentation, safeguards, and operational rollout guidance"
+        },
+        "timeline": "2-8 weeks",
+        "ctaText": "Implement AI That Works"
       }
     },
     "work": {
