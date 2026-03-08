@@ -31,7 +31,7 @@ const actionText = translateMaybeKey(solution.data.ctaText || t('solutionDetail.
 const pageTitle = `${title} | ${SITE_NAME}`;
 const canonicalPath = new URL(Astro.url.pathname, Astro.site).toString();
 
-const structuredData = {
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: title,
@@ -57,6 +57,33 @@ const structuredData = {
     }))
   }
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: SITE_URL
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Solutions',
+      item: `${SITE_URL}/solutions`
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: canonicalPath
+    }
+  ]
+};
+
+const structuredData = [serviceSchema, breadcrumbSchema];
 ---
 
 <BaseLayout

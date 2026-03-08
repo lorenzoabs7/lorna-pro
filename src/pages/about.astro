@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getI18n } from '../i18n/server';
+import { SITE_NAME, SITE_URL, SITE_LOGO } from '../lib/seo';
 
 const { t } = getI18n(Astro);
 
@@ -9,12 +10,15 @@ const valueCards = ['execution', 'clarity', 'reliability', 'speed', 'partnership
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  name: `${t('navigation.links.about')} ${t('common.brandName')}`,
+  name: `About ${SITE_NAME}`,
+  url: `${SITE_URL}/about`,
   description: t('about.meta.description'),
   mainEntity: {
     '@type': 'Organization',
-    name: t('common.brandName'),
+    name: SITE_NAME,
+    url: SITE_URL,
     description: t('about.meta.description'),
+    logo: SITE_LOGO,
     founder: {
       '@type': 'Person',
       name: 'Lorna'
@@ -22,9 +26,11 @@ const structuredData = {
     knowsAbout: [
       'Software Engineering',
       'Systems Architecture',
+      'Cloud Infrastructure',
       'Automation',
       'Workflow Design',
-      'Performance Optimization'
+      'Performance Optimization',
+      'AI Integration'
     ]
   }
 };

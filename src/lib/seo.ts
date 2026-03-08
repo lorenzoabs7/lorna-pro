@@ -10,14 +10,19 @@ export const SITE_TAGLINE = 'Engineering Consulting for Production-Ready Systems
 /** Default OG/Twitter share image — must exist at public/og-image.png */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png` as const;
 
+/**
+ * Brand logo served from public/lornaLogo.svg.
+ * Used in schema.org logo fields (Organization, publisher, etc.).
+ * Note: Google structured data guidelines prefer PNG/JPG for logos.
+ * If a PNG version is needed, place it at public/lornaLogo.png and update this constant.
+ */
+export const SITE_LOGO = `${SITE_URL}/lornaLogo.svg` as const;
+
 /** Twitter/X handle — update to real handle when available */
 export const TWITTER_HANDLE = '@lornadev' as const;
 
 /** Default robots directive for public pages */
 export const DEFAULT_ROBOTS = 'index, follow' as const;
-
-/** Robots directive for legal/utility pages */
-export const NOINDEX_ROBOTS = 'noindex, follow' as const;
 
 /**
  * Returns an absolute canonical URL for a given pathname.

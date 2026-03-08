@@ -8,6 +8,7 @@
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "generate:assets": "node scripts/generate-og-image.mjs && node scripts/generate-favicon.mjs",
+    "deploy": "pnpm build && node scripts/deploy-s3.mjs",
     "dev": "node scripts/generate-og-image.mjs && node scripts/generate-favicon.mjs && pnpm exec astro dev",
     "start": "pnpm exec astro dev",
     "prebuild": "node scripts/generate-og-image.mjs && node scripts/generate-favicon.mjs",
