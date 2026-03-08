@@ -26,14 +26,24 @@ interface ContactApiResponse {
   errorKey?: TranslationKey;
 }
 
-function getApiUrl(): string {
+function getApiUrl(lang?: string): string {
   const base =
-    typeof import.meta.env !== 'undefined' ? import.meta.env.PUBLIC_CONTACT_API_URL : '';
-  return base ? `${String(base).replace(/\/$/, '')}/api/contact` : '/api/contact';
+    typeof import.meta.env !== 'undefined'
+      ? import.meta.env.PUBLIC_CONTACT_API_URL
+      : '';
+
+  const url = base
+    ? `${String(base).replace(/\/$/, '')}/api/contact`
+    : '/api/contact';
+
+  if (!lang) return url;
+
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}lang=${encodeURIComponent(lang)}`;
 }
 
 const ContactForm: React.FC = () => {
-  const { t } = useI18n();
+  const { t, locale: lang } = useI18n();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -125,7 +135,7 @@ const ContactForm: React.FC = () => {
     setErrors({});
 
     try {
-      const response = await fetch(getApiUrl(), {
+      const response = await fetch(getApiUrl(lang), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -134,10 +144,11 @@ const ContactForm: React.FC = () => {
       });
 
       const raw = await response.text();
+
       let result: ContactApiResponse = {};
+
       try {
-        result = raw ? (JSON.parse(raw) as ContactApiResponse) : {};
-        if (typeof result === 'string') result = JSON.parse(result) as ContactApiResponse;
+        result = raw ? JSON.parse(raw) : {};
       } catch {
         result = {};
       }
