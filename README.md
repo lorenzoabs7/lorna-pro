@@ -10,7 +10,7 @@ A production-grade marketing website for Lorna Dev, an engineering consulting fi
 - **Content**: MDX for content collections
 - **Email**: Resend API
 - **Database**: SQLite for form submissions
-- **Deployment**: Vercel/Netlify ready
+- **Deployment**: Static (e.g. AWS S3, Netlify, Vercel static)
 
 ## 📋 Prerequisites
 
@@ -146,18 +146,35 @@ Form submissions are stored in SQLite:
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+The site builds to **static files** (`dist/`). You can host it on any static host.
+
+### AWS S3 (static hosting)
+
+1. **Build**:
+   ```bash
+   pnpm build
+   ```
+
+2. **Upload** the contents of `dist/` to your S3 bucket.
+
+3. **Enable static website hosting** on the bucket (Properties → Static website hosting).
+
+4. **Contact form**: S3 cannot run API routes. Deploy the contact API separately (e.g. AWS API Gateway + Lambda using the logic in `src/pages/api/contact.ts`), then set the public URL at build time:
+   ```bash
+   PUBLIC_CONTACT_API_URL=https://your-api-id.execute-api.region.amazonaws.com/stage pnpm build
+   ```
+   The form will POST to `PUBLIC_CONTACT_API_URL/api/contact`.
+
+### Vercel (static)
 
 1. **Connect repository**:
    ```bash
-   # Install Vercel CLI
    pnpm add -g vercel
-
-   # Deploy
    vercel
    ```
 
-2. **Environment variables**: Add to Vercel dashboard
+2. **Environment variables**: Add to Vercel dashboard (e.g. for a serverless contact API, set `PUBLIC_CONTACT_API_URL` if you host the API elsewhere).
+
 3. **Domain**: Configure custom domain (lornadev.com)
 
 ### Netlify

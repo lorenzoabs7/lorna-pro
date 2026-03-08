@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getI18n } from '../../i18n/server';
 import type { TranslationKey } from '../../i18n/translator';
+import { SITE_NAME, SITE_URL } from '../../lib/seo';
 
-export const prerender = false;
+export const prerender = true;
 
 export async function getStaticPaths() {
   const solutions = await getCollection('solutions');
@@ -27,23 +28,41 @@ const title = translateMaybeKey(solution.data.title);
 const description = translateMaybeKey(solution.data.description);
 const actionText = translateMaybeKey(solution.data.ctaText || t('solutionDetail.cta.fallbackAction'));
 
+const pageTitle = `${title} | ${SITE_NAME}`;
+const canonicalPath = new URL(Astro.url.pathname, Astro.site).toString();
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: title,
   description,
+  url: canonicalPath,
   provider: {
     '@type': 'Organization',
-    name: t('common.brandName')
+    name: SITE_NAME,
+    url: SITE_URL
   },
   serviceType: title,
-  areaServed: 'Worldwide'
+  areaServed: 'Worldwide',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: title,
+    itemListElement: solution.data.deliverables.map((d, i) => ({
+      '@type': 'Offer',
+      position: i + 1,
+      itemOffered: {
+        '@type': 'Service',
+        name: translateMaybeKey(d)
+      }
+    }))
+  }
 };
 ---
 
 <BaseLayout
-  title={`${title} | ${t('common.brandName')}`}
+  title={pageTitle}
   description={description}
+  ogType="website"
   structuredData={structuredData}
 >
   <section class="bg-gradient-to-br from-brand-primary via-brand-technical-accent-dark to-brand-primary py-20">

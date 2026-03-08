@@ -29,7 +29,15 @@ function getQueryLocaleFromAstro(astro: any): Locale | null {
   return normalizeLocale(q ?? null);
 }
 
+// True at build time when output is 'static' (see astro.config.mjs vite.define)
+const isStaticBuild = typeof __ASTRO_STATIC_BUILD__ !== 'undefined' && __ASTRO_STATIC_BUILD__;
+
 export function resolveServerLocale(astro: any): Locale {
+  // Static build: never touch request/headers to avoid Astro warnings
+  if (isStaticBuild || !astro?.request) {
+    return DEFAULT_LOCALE;
+  }
+
   const cookieLocale = getCookieLocaleFromAstro(astro);
   const acceptLanguage = astro?.request?.headers?.get?.('accept-language') ?? null;
   const browserLocale = detectLocaleFromAcceptLanguage(acceptLanguage);
@@ -41,7 +49,6 @@ export function resolveServerLocale(astro: any): Locale {
   });
 
   // ?locale= query param is a last-resort override (e.g. shared links).
-  // Cookie takes precedence so regular navigation never needs the param.
   const queryLocale = getQueryLocaleFromAstro(astro);
   return queryLocale ?? resolved;
 }

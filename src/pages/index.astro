@@ -9,15 +9,22 @@ import OutcomesSection from '../components/sections/OutcomesSection.astro';
 import FAQSection from '../components/sections/FAQSection.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import { getI18n } from '../i18n/server';
+import { SITE_URL, SITE_NAME } from '../lib/seo';
 
 const { t } = getI18n(Astro);
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: t('common.brandName'),
+  name: SITE_NAME,
   description: t('home.meta.description'),
-  url: 'https://lornadev.com',
+  url: SITE_URL,
+  logo: `${SITE_URL}/og-image.png`,
+  image: `${SITE_URL}/og-image.png`,
+  /**
+   * Update sameAs with real social/directory profile URLs once available.
+   * e.g. 'https://github.com/lornadev', 'https://linkedin.com/company/lornadev'
+   */
   sameAs: [],
   serviceType: [
     t('footer.services.automation'),
@@ -26,16 +33,21 @@ const structuredData = {
     t('footer.services.integrations'),
   ],
   areaServed: 'Worldwide',
-  provider: {
-    '@type': 'Organization',
-    name: t('common.brandName'),
-  },
+  knowsAbout: [
+    'Software Engineering',
+    'Cloud Architecture',
+    'API Performance Optimization',
+    'CI/CD Automation',
+    'AI Integration',
+    'Custom Web Development',
+  ],
 };
 ---
 
 <BaseLayout
   title={t('home.meta.title')}
   description={t('home.meta.description')}
+  ogType="website"
   structuredData={structuredData}
 >
   <HeroSection />

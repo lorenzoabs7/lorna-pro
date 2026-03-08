@@ -1,19 +1,11 @@
 User-agent: *
 Allow: /
 
-# Allow crawling of all content
-Allow: /solutions/
-Allow: /work/
-Allow: /about/
-Allow: /contact/
-Allow: /insights/
-
-# Disallow admin areas and API
+# Block API routes — not intended for crawling
 Disallow: /api/
-Disallow: /admin/
 
-# Disallow draft content
+# Block query-string-only variants to prevent duplicate indexing
 Disallow: /*?draft=true*
 
-# Sitemap
+# Sitemap location
 Sitemap: https://lornadev.com/sitemap.xml

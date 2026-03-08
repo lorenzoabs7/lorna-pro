@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getI18n } from '../../i18n/server';
 import type { TranslationKey } from '../../i18n/translator';
+import { SITE_NAME } from '../../lib/seo';
 
-export const prerender = false;
+export const prerender = true;
 
 export async function getStaticPaths() {
   const work = await getCollection('work');
@@ -25,25 +26,51 @@ const translateMaybeKey = (value: string | undefined): string => {
 
 const title = translateMaybeKey(work.data.title);
 const problem = translateMaybeKey(work.data.problem);
+const results = work.data.results.map((r) => translateMaybeKey(r));
+
+// Keep description concise: problem statement only (≤160 chars)
+const metaDescription = problem.length <= 160 ? problem : problem.substring(0, 157) + '…';
+
+// Use the real publishedAt date from frontmatter if available; never use new Date() as fallback
+// because a dynamic date breaks structured data caching and looks wrong to crawlers.
+const publishedAt = work.data.publishedAt
+  ? work.data.publishedAt.toISOString()
+  : undefined;
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'CreativeWork',
-  name: title,
+  '@type': 'Article',
+  headline: title,
   description: problem,
-  about: work.data.results.map((result) => translateMaybeKey(result)),
-  creator: {
+  author: {
     '@type': 'Organization',
-    name: t('common.brandName')
+    name: SITE_NAME,
+    url: 'https://lornadev.com'
   },
-  datePublished: work.data.publishedAt || new Date().toISOString(),
-  keywords: work.data.stack.join(', ')
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: 'https://lornadev.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://lornadev.com/og-image.png'
+    }
+  },
+  ...(publishedAt ? { datePublished: publishedAt } : {}),
+  keywords: work.data.stack.join(', '),
+  about: results,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(Astro.url.pathname, Astro.site).toString()
+  }
 };
 ---
 
 <BaseLayout
-  title={`${title} | ${t('common.labels.caseStudy')} | ${t('common.brandName')}`}
-  description={`${problem} ${work.data.results.map((result) => translateMaybeKey(result)).join('. ')}`}
+  title={`${title} | ${t('common.labels.caseStudy')} | ${SITE_NAME}`}
+  description={metaDescription}
+  ogType="article"
+  datePublished={publishedAt}
   structuredData={structuredData}
 >
   <section class="bg-gradient-to-br from-brand-primary via-brand-technical-accent-dark to-brand-primary py-20">
@@ -141,12 +168,12 @@ const structuredData = {
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-bold text-brand-text-primary-light dark:text-brand-text-primary-dark mb-8 text-center">{t('workDetail.labels.keyResults')}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {work.data.results.map((result) => (
+        {results.map((result) => (
           <div class="flex items-start p-4 bg-brand-bg-light dark:bg-brand-bg-dark rounded-lg border border-brand-text-secondary-light/20 dark:border-brand-text-secondary-dark/20">
             <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
-            <span class="text-brand-text-primary-light dark:text-brand-text-primary-dark">{translateMaybeKey(result)}</span>
+            <span class="text-brand-text-primary-light dark:text-brand-text-primary-dark">{result}</span>
           </div>
         ))}
       </div>
