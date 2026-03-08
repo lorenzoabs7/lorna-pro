@@ -4,27 +4,29 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
-const logoPath = join(root, 'src/assets/logo/lornaLogo.svg');
-const faviconPath = join(root, 'public/favicon.svg');
 
-let svg = readFileSync(logoPath, 'utf8');
-// Strip metadata so the favicon is smaller and avoids C2PA/other payloads
-svg = svg.replace(/<metadata[\s\S]*?<\/metadata>/gi, '');
-// Extract inner content (between first <svg...> and </svg>)
-const openEnd = svg.indexOf('>', svg.indexOf('<svg')) + 1;
-const closeStart = svg.lastIndexOf('</svg>');
-const inner = svg.slice(openEnd, closeStart).trim();
-// Logo viewBox from original (keep aspect ratio)
-const viewBox = '0 0 345.75 479.249994';
+const SRC  = join(root, 'src/assets/logo/favicon.svg');
+const DEST = join(root, 'public/favicon.svg');
 
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <circle cx="16" cy="16" r="15" fill="white"/>
-  <svg x="2" y="2" width="28" height="28" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-${inner}
-  </svg>
-</svg>
-`;
+/**
+ * Copies src/assets/logo/favicon.svg → public/favicon.svg.
+ *
+ * The source file is the real brand favicon exported from Canva.
+ * It contains a <metadata> block with a C2PA certificate chain
+ * (Canva's content-authenticity payload) that has no visual effect
+ * and adds ~22KB to every page load. We strip that block only.
+ * All drawing instructions (clipPaths, masks, embedded PNGs) are preserved.
+ */
+const raw = readFileSync(SRC, 'utf8');
+const cleaned = raw.replace(/<metadata[\s\S]*?<\/metadata>/gi, '');
 
-mkdirSync(dirname(faviconPath), { recursive: true });
-writeFileSync(faviconPath, faviconSvg, 'utf8');
-console.log('Favicon generated with inlined logo at public/favicon.svg');
+mkdirSync(dirname(DEST), { recursive: true });
+writeFileSync(DEST, cleaned, 'utf8');
+
+const srcSize  = Buffer.byteLength(raw,     'utf8');
+const destSize = Buffer.byteLength(cleaned, 'utf8');
+const saved    = srcSize - destSize;
+
+console.log(`Favicon copied: public/favicon.svg`);
+console.log(`  Source : ${(srcSize  / 1024).toFixed(1)}KB  (src/assets/logo/favicon.svg)`);
+console.log(`  Output : ${(destSize / 1024).toFixed(1)}KB  (metadata block stripped, ${(saved / 1024).toFixed(1)}KB saved)`);

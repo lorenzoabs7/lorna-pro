@@ -20,19 +20,19 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const ROOT = join(__dirname, '..');
+const ROOT   = join(__dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 const LOGO_PNG = join(ROOT, 'src', 'assets', 'logo', 'lornaLogo.png');
 
-// ── Brand colors ────────────────────────────────────────────────────────────
-const BG_DARK   = '#0f172a';   // dark navy background
-const ACCENT    = '#3a6ea5';   // brand blue
-const TEXT_PRI  = '#ffffff';
-const TEXT_SEC  = '#94a3b8';
+// ── Brand colors (hex → RGB for sharp) ───────────────────────────────────────
+const BG_DARK_RGB  = { r: 15,  g: 23,  b: 42,  alpha: 1 };   // #0f172a
+const BG_DARK2_RGB = { r: 30,  g: 41,  b: 59,  alpha: 1 };   // #1e293b
+const ACCENT_HEX   = '#3a6ea5';
+const TEXT_SEC     = '#94a3b8';
 
-// ── OG image SVG template (1200×630) ────────────────────────────────────────
-const OG_SVG = `<svg width="1200" height="630" viewBox="0 0 1200 630"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+// ── OG background SVG (pure shapes — no text, logo composited separately) ───
+const OG_BG_SVG = `<svg width="1200" height="630" viewBox="0 0 1200 630"
+  xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%"   stop-color="#0f172a"/>
@@ -44,24 +44,25 @@ const OG_SVG = `<svg width="1200" height="630" viewBox="0 0 1200 630"
   <rect width="1200" height="630" fill="url(#bg)"/>
 
   <!-- Left accent bar -->
-  <rect x="60" y="80" width="5" height="470" fill="${ACCENT}" rx="2"/>
+  <rect x="60" y="80" width="5" height="470" fill="${ACCENT_HEX}" rx="2"/>
 
   <!-- Brand name -->
   <text x="100" y="235"
     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="92" font-weight="800" fill="${TEXT_PRI}" letter-spacing="-2">
+    font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-2">
     Lorna Dev
   </text>
 
   <!-- Divider -->
-  <rect x="100" y="270" width="340" height="2" fill="${ACCENT}" opacity="0.5"/>
+  <rect x="100" y="270" width="340" height="2" fill="${ACCENT_HEX}" opacity="0.5"/>
 
-  <!-- Tagline -->
+  <!-- Tagline line 1 -->
   <text x="100" y="330"
     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
     font-size="34" font-weight="400" fill="${TEXT_SEC}">
     Engineering Consulting for
   </text>
+  <!-- Tagline line 2 -->
   <text x="100" y="378"
     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
     font-size="34" font-weight="400" fill="${TEXT_SEC}">
@@ -71,32 +72,30 @@ const OG_SVG = `<svg width="1200" height="630" viewBox="0 0 1200 630"
   <!-- Domain -->
   <text x="100" y="512"
     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="26" font-weight="600" fill="${ACCENT}">
+    font-size="26" font-weight="600" fill="${ACCENT_HEX}">
     lornadev.com
   </text>
 
-  <!-- Decorative concentric circles (right side) -->
-  <circle cx="1080" cy="315" r="200" fill="${ACCENT}" opacity="0.05"/>
-  <circle cx="1080" cy="315" r="140" fill="${ACCENT}" opacity="0.05"/>
-  <circle cx="1080" cy="315" r="80"  fill="${ACCENT}" opacity="0.06"/>
-  <circle cx="1080" cy="315" r="28"  fill="${ACCENT}" opacity="0.12"/>
+  <!-- Decorative concentric circles (right side, behind logo) -->
+  <circle cx="980" cy="315" r="200" fill="${ACCENT_HEX}" opacity="0.05"/>
+  <circle cx="980" cy="315" r="140" fill="${ACCENT_HEX}" opacity="0.05"/>
+  <circle cx="980" cy="315" r="80"  fill="${ACCENT_HEX}" opacity="0.06"/>
+  <circle cx="980" cy="315" r="28"  fill="${ACCENT_HEX}" opacity="0.12"/>
 </svg>`;
 
-// ── Apple-touch-icon SVG fallback (180×180) ──────────────────────────────────
+// ── Apple-touch-icon SVG fallback (180×180 lettermark) ───────────────────────
 const ICON_SVG = `<svg width="180" height="180" viewBox="0 0 180 180"
   xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" fill="${BG_DARK}" rx="20"/>
-  <!-- "L" lettermark -->
+  <rect width="180" height="180" fill="#0f172a" rx="20"/>
   <text x="50" y="132"
     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="100" font-weight="800" fill="${TEXT_PRI}">
+    font-size="100" font-weight="800" fill="#ffffff">
     L
   </text>
-  <!-- Accent dot -->
-  <circle cx="126" cy="118" r="12" fill="${ACCENT}"/>
+  <circle cx="126" cy="118" r="12" fill="${ACCENT_HEX}"/>
 </svg>`;
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function ensurePublic() {
   if (!existsSync(PUBLIC)) mkdirSync(PUBLIC, { recursive: true });
 }
@@ -115,32 +114,70 @@ async function loadSharp() {
   }
 }
 
-// ── Generators ───────────────────────────────────────────────────────────────
+// ── Generators ────────────────────────────────────────────────────────────────
 async function generateOgImage(sharp) {
   const out = join(PUBLIC, 'og-image.png');
-  await sharp(Buffer.from(OG_SVG))
+
+  // Render the background SVG as a truecolor PNG buffer
+  const bgBuffer = await sharp(Buffer.from(OG_BG_SVG))
     .resize(1200, 630)
-    .png({ quality: 95, compressionLevel: 8 })
-    .toFile(out);
-  console.log('  ✓ public/og-image.png         (1200×630)');
+    .png()
+    .toBuffer();
+
+  let result;
+
+  if (existsSync(LOGO_PNG)) {
+    // Fit the logo into a 220×220 box, preserve transparency, then composite
+    // it on the right side of the card (centered at x≈980, y≈315)
+    const logoBuffer = await sharp(LOGO_PNG)
+      .resize(220, 220, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png()
+      .toBuffer();
+
+    result = await sharp(bgBuffer)
+      .composite([{
+        input: logoBuffer,
+        gravity: 'northeast',
+        top: 205,
+        left: 0,
+      }])
+      .png({ compressionLevel: 9 })
+      .toBuffer();
+
+    // Use explicit positioning instead of gravity to center the logo on the right panel
+    const logoMeta = await sharp(logoBuffer).metadata();
+    const logoW = logoMeta.width ?? 220;
+    const logoH = logoMeta.height ?? 220;
+    const logoLeft = 980 - Math.floor(logoW / 2);
+    const logoTop  = 315 - Math.floor(logoH / 2);
+
+    result = await sharp(bgBuffer)
+      .composite([{ input: logoBuffer, left: logoLeft, top: logoTop }])
+      .png({ compressionLevel: 9 })
+      .toBuffer();
+  } else {
+    result = await sharp(bgBuffer)
+      .png({ compressionLevel: 9 })
+      .toBuffer();
+    console.warn('  ⚠ src/assets/logo/lornaLogo.png not found — OG image has no logo composite');
+  }
+
+  // Write final truecolor PNG (color type 2, not palette/indexed)
+  await sharp(result).toFile(out);
+  console.log('  ✓ public/og-image.png         (1200×630, truecolor)');
 }
 
 async function generateAppleTouchIcon(sharp) {
   const out = join(PUBLIC, 'apple-touch-icon.png');
 
   if (existsSync(LOGO_PNG)) {
-    // Resize the real logo with padding to fill 180×180
     await sharp(LOGO_PNG)
-      .resize(136, 136, { fit: 'contain', background: { r: 15, g: 23, b: 42, alpha: 1 } })
-      .extend({
-        top: 22, bottom: 22, left: 22, right: 22,
-        background: { r: 15, g: 23, b: 42, alpha: 1 }
-      })
+      .resize(136, 136, { fit: 'contain', background: BG_DARK_RGB })
+      .extend({ top: 22, bottom: 22, left: 22, right: 22, background: BG_DARK_RGB })
       .png()
       .toFile(out);
     console.log('  ✓ public/apple-touch-icon.png (180×180, from logo PNG)');
   } else {
-    // Fall back to SVG lettermark
     await sharp(Buffer.from(ICON_SVG))
       .resize(180, 180)
       .png()
@@ -152,11 +189,10 @@ async function generateAppleTouchIcon(sharp) {
 async function generateFaviconIco(sharp) {
   const out = join(PUBLIC, 'favicon.ico');
 
-  // Build a 48×48 PNG first; then write it as ICO (most platforms only need 1 size in ICO)
   let src;
   if (existsSync(LOGO_PNG)) {
     src = await sharp(LOGO_PNG)
-      .resize(48, 48, { fit: 'contain', background: { r: 15, g: 23, b: 42, alpha: 1 } })
+      .resize(48, 48, { fit: 'contain', background: BG_DARK_RGB })
       .png()
       .toBuffer();
   } else {
@@ -166,23 +202,23 @@ async function generateFaviconIco(sharp) {
   // Minimal ICO container: ICONDIR (6 bytes) + ICONDIRENTRY (16 bytes) + PNG data
   const pngData   = src;
   const pngLen    = pngData.length;
-  const headerLen = 6 + 16;           // ICONDIR + 1 ICONDIRENTRY
+  const headerLen = 6 + 16;
   const buf       = Buffer.alloc(headerLen + pngLen);
 
   // ICONDIR
-  buf.writeUInt16LE(0,    0);  // reserved
-  buf.writeUInt16LE(1,    2);  // type = 1 (ICO)
-  buf.writeUInt16LE(1,    4);  // count = 1
+  buf.writeUInt16LE(0, 0);   // reserved
+  buf.writeUInt16LE(1, 2);   // type = 1 (ICO)
+  buf.writeUInt16LE(1, 4);   // count = 1 image
 
   // ICONDIRENTRY
-  buf.writeUInt8(48,      6);  // width  (0 = 256)
-  buf.writeUInt8(48,      7);  // height (0 = 256)
-  buf.writeUInt8(0,       8);  // color count
-  buf.writeUInt8(0,       9);  // reserved
-  buf.writeUInt16LE(1,   10);  // color planes
-  buf.writeUInt16LE(32,  12);  // bits per pixel
-  buf.writeUInt32LE(pngLen,    14);  // size of image data
-  buf.writeUInt32LE(headerLen, 18);  // offset of image data
+  buf.writeUInt8(48, 6);            // width
+  buf.writeUInt8(48, 7);            // height
+  buf.writeUInt8(0,  8);            // color count (0 = no palette)
+  buf.writeUInt8(0,  9);            // reserved
+  buf.writeUInt16LE(1,  10);        // color planes
+  buf.writeUInt16LE(32, 12);        // bits per pixel
+  buf.writeUInt32LE(pngLen,    14); // size of image data
+  buf.writeUInt32LE(headerLen, 18); // offset to image data
 
   pngData.copy(buf, headerLen);
 
@@ -191,7 +227,7 @@ async function generateFaviconIco(sharp) {
   console.log('  ✓ public/favicon.ico          (48×48 ICO)');
 }
 
-// ── Entry point ──────────────────────────────────────────────────────────────
+// ── Entry point ───────────────────────────────────────────────────────────────
 async function main() {
   console.log('\n[generate-og-image] Generating static image assets…');
   ensurePublic();
