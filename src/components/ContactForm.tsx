@@ -26,6 +26,12 @@ interface ContactApiResponse {
   errorKey?: TranslationKey;
 }
 
+function getApiUrl(): string {
+  const base =
+    typeof import.meta.env !== 'undefined' ? import.meta.env.PUBLIC_CONTACT_API_URL : '';
+  return base ? `${String(base).replace(/\/$/, '')}/api/contact` : '/api/contact';
+}
+
 const ContactForm: React.FC = () => {
   const { t } = useI18n();
   const [formData, setFormData] = useState<FormData>({
@@ -119,7 +125,7 @@ const ContactForm: React.FC = () => {
     setErrors({});
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(getApiUrl(), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -127,7 +133,14 @@ const ContactForm: React.FC = () => {
         body: JSON.stringify(formData)
       });
 
-      const result = (await response.json()) as ContactApiResponse;
+      const raw = await response.text();
+      let result: ContactApiResponse = {};
+      try {
+        result = raw ? (JSON.parse(raw) as ContactApiResponse) : {};
+        if (typeof result === 'string') result = JSON.parse(result) as ContactApiResponse;
+      } catch {
+        result = {};
+      }
 
       if (!response.ok) {
         if (result.errorKey) {
